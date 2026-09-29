@@ -4,3 +4,21 @@
 .titulo {
     color: slateblue;
 }
+body {
+    background: linear-gradient(
+  135deg,
+  #20B9C4 0%,
+  #2874A8 50%,
+  #252B72 100%
+);
+}
+
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+footer {
+    display: block;
+
+}
