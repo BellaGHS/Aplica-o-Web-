@@ -1,3 +1,30 @@
+/* font inter ass:jota */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.logo-header {
+    height: 100px;
+    display: block;
+}
+
+/* Header feito ass: jota */
+.site-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fi
+}
+
+/* nav é como se fosse uma div só que mais recomendado para a navegação da pagina */
+nav ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    color: #FFFF;
+}
+
 .center {
     text-align: center;
 }
@@ -13,12 +40,20 @@ body {
 );
 }
 
-.image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 footer {
     display: block;
 
 }
+
+/* textos da pagina ass: jota*/
+#texto-principal{
+    font-family: 'Inter';
+    color: #FFFF;
+}
+
+#descricao{
+    color: #FFFF;
+    font-family: 'Inter';
+}
+
