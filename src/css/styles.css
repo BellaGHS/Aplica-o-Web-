@@ -1,59 +1,77 @@
 /* font inter ass:jota */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .logo-header {
-    height: 100px;
-    display: block;
+  height: 100px;
+  display: block;
 }
 
 /* Header feito ass: jota */
-.site-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    position: fi
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
 }
 
-/* nav é como se fosse uma div só que mais recomendado para a navegação da pagina */
-nav ul{
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 20px;
-    color: #FFFF;
+/* nav é como se fosse uma div só que mais recomendado para a navegação de paginas */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  color: #ffff;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 .titulo {
-    color: slateblue;
-}
-body {
-    background: linear-gradient(
-  135deg,
-  #20B9C4 0%,
-  #2874A8 50%,
-  #252B72 100%
-);
+  color: slateblue;
 }
 
+body {
+  background: linear-gradient(135deg, #20b9c4 0%, #2874a8 50%, #252b72 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+}
+
+.secao {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
 
 footer {
-    display: block;
-
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
 }
 
-/* textos da pagina ass: jota*/
-#texto-principal{
-    font-family: 'Inter';
-    color: #FFFF;
+
+/* textos da pagina em ordem de hierarquia ass: jota*/
+#texto-principal {
+  font-family: "Inter";
+  color: #ffff;
 }
 
-#descricao{
-    color: #FFFF;
-    font-family: 'Inter';
+#descricao {
+  color: #ffff;
+  font-family: "Inter";
 }
-
