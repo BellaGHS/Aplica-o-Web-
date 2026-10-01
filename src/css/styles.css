@@ -12,10 +12,6 @@
   display: block;
 }
 
-#home-ancora, #sobre-nos-ancora{
-  color: white;
-}
-
 /* Header feito ass: jota */
 .site-header {
   display: flex;
@@ -25,12 +21,22 @@
 }
 
 /* nav é como se fosse uma div só que mais recomendado para a navegação de paginas */
-/* elementos dentro do header */
+/* organizacao dos elementos dentro do header */
 nav ul {
   display: flex;
   list-style: none;
   gap: 20px;
   color: #ffff;
+}
+
+#home-ancora-header, #sobre-nos-ancora-header{
+  color: white;
+  text-decoration: none;
+}
+
+#home-ancora-header:hover, #sobre-nos-ancora-header:hover{
+  color: rgb(212, 212, 212);
+  text-decoration: underline;
 }
 
 /* textos da pagina em ordem de hierarquia ass: jota*/
