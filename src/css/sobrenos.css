@@ -1,0 +1,44 @@
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+    background-color: rgba(255, 255, 255, 0.247);
+    border-color: white;
+    border-radius: 50px;
+    width: 90%;
+    border: 1px solid rgba(255, 255, 255, 0.685);
+
+    padding: 5px 40px;
+}   
+
+.menu p {
+    color: white;
+    font-family: 'Inter' sans-serif;
+    font-size: 33px;
+    font-weight: 700;
+}
+
+
+#logo{
+    width: 13%;
+    height: 13%;
+
+}
+.menu p {
+    margin: 0 20px;
+}
+
+.fundo_gradiente {
+    background: linear-gradient(to top right,#2dbdc5 0%, #30196b 100%);
+    min-height: 750px;
+    width: 100%;
+
+    padding-top: 20px;
+    box-sizing: border-box;
+}
