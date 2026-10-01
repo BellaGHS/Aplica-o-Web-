@@ -12,6 +12,10 @@
   display: block;
 }
 
+#home-ancora, #sobre-nos-ancora{
+  color: white;
+}
+
 /* Header feito ass: jota */
 .site-header {
   display: flex;
@@ -21,6 +25,7 @@
 }
 
 /* nav é como se fosse uma div só que mais recomendado para a navegação de paginas */
+/* elementos dentro do header */
 nav ul {
   display: flex;
   list-style: none;
@@ -28,11 +33,15 @@ nav ul {
   color: #ffff;
 }
 
-.center {
-  text-align: center;
+/* textos da pagina em ordem de hierarquia ass: jota*/
+#texto-principal {
+  font-family: "Inter";
+  color: #ffff;
 }
-.titulo {
-  color: slateblue;
+
+#descricao {
+  color: #ffff;
+  font-family: "Inter";
 }
 
 body {
@@ -65,13 +74,3 @@ footer {
 }
 
 
-/* textos da pagina em ordem de hierarquia ass: jota*/
-#texto-principal {
-  font-family: "Inter";
-  color: #ffff;
-}
-
-#descricao {
-  color: #ffff;
-  font-family: "Inter";
-}
