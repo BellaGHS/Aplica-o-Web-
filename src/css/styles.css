@@ -59,6 +59,15 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+#botao-amplia{
+  width: 446px;
+  height: 69px;
+  color: white;
+  text-align: center;
+  background-color: #30347B ;
+  border-radius: 50px;
+}
+
 .secao {
   min-height: 100vh;
   display: flex;
