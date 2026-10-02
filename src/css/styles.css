@@ -54,7 +54,7 @@
 }
 
 /* textos da pagina em ordem de hierarquia ass: jota*/
-#texto-principal {
+#texto-principal{
   display: flex;
   font-family: "Inter";
   color: #ffff;
@@ -65,6 +65,18 @@
   font-family: "Inter";
 }
 
+
+.caixa-principal{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 600px;
+  margin-bottom: 20px;
+  margin-right: 450px;
+  gap: 10px;
+
+}
 body {
   background: linear-gradient(135deg, #20b9c4 0%, #2874a8 50%, #252b72 100%);
   background-attachment: fixed;
@@ -75,15 +87,28 @@ body {
 }
 
 #botao-amplia{
-  width: 446px;
-  height: 69px;
+  width: 200px;
+  height: 50px;
   color: white;
   text-align: center;
   background-color: #30347B ;
   border-radius: 50px;
+  box-shadow: none;
+  outline: none;
+  border: none;
 }
 
-.secao {
+#botao-amplia:active{
+  width: 200px;
+  height: 50px;
+  color: white;
+  text-align: center;
+  background-color: hsl(237, 42%, 20%) ;
+  border-radius: 50px;
+  box-shadow: none;
+}
+
+.secao-principal {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
