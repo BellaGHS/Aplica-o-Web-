@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 * {
     padding: 0;
     margin: 0;
@@ -26,7 +28,7 @@
 
 .menu a {
     color: white;
-    font-family: 'Inter' sans-serif;
+    font-family: 'Inter';
     font-size: 33px;
     font-weight: 700;
     text-decoration: none;
@@ -48,9 +50,34 @@
 }
 .fundo_gradiente {
     background: linear-gradient(to top right,#2dbdc5 0%, #30196b 100%);
-    min-height: 750px;
+    height: 780px;
     width: 100%;
     
     padding-top: 20px;
     box-sizing: border-box;
+}
+
+.titulo h1 {
+    color: white;
+    font-family: 'Inter';
+    text-align: left;
+    position: relative;
+    top: 200px;
+    left: 160px;
+    font-size: 110px;
+}
+
+.titulo h2 {
+    color: white;
+    font-family: 'Inter';
+    position: relative;
+    top: 250px;
+    left: 165px;
+    width: 50%;
+}
+
+.titulo img {
+    position: relative;
+    bottom: 180px;
+    left: 1175px;
 }
