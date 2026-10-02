@@ -122,16 +122,38 @@ body { /* Aqui é pra resolver um bug que tava criando mais espaço do lado da p
     mix-blend-mode: multiply;
 }   
 
-.corpo h1 {
-    font-size: 70px;
-    font-weight: 650;
-    margin-left: 3%;
+.corpo .cima h1 {
     font-family: 'Inter';
+    font-size: 64px;
+    font-weight: 800;
+    margin-left: 4%;
 }
-
-.corpo {
+.corpo .cima p {
     font-family: 'Inter';
     font-size: 32px;
-    margin-left: 4%;
     width: 45%;
+    margin-left: 5%;
+}
+.corpo .cima img {
+    display: flex;
+    margin-left: auto;
+}
+.corpo .baixo h1 {
+    font-family: 'Inter';
+    font-size: 64px;
+    font-weight: 800;
+    margin-left: auto;
+    text-align: right;
+    margin-right: 4%;
+    margin-top: 2%;
+}
+
+.corpo .baixo p {
+     font-family: 'Inter';
+    font-size: 32px;
+    width: 45%;
+    margin-left: auto;
+    text-align: right;
+    margin-right: 5%;
+    
 }
