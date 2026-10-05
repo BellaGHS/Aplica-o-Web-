@@ -1,6 +1,9 @@
 /* font inter ass:jota */
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+body { /*reciclei isso do sobrenos.css*/
+    overflow-x: hidden;
+}
 * {
   margin: 0;
   padding: 0;
@@ -117,15 +120,159 @@ body {
   gap: 16px;
 }
 
+.midpage {
+    background-color: white;
+    position: relative;
+    width: 100%;
+    padding: 80px 0;
+}
+
 footer {
   width: 100%;
-  max-width: 1200px;
+  max-width: 100px;
   margin: 0 auto;
   padding: 30px 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   gap: 30px;
 }
 
+#logo {
+    align-items: right;
+    width: 239px;
+    height: 73px;
+    object-fit: cover;
+}
 
+.textos-intro {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto; /*centralizar */
+}
+
+.textos-intro h1 {
+    font-size: clamp(40px, 5vw, 70px);
+    font-weight: 900;
+    color: transparent;
+    font-family: 'Inter';
+    background: linear-gradient(to right, #2e9bb2 0%, #2f538d 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.textos-intro p {
+    font-family: 'Inter';
+    font-size: clamp(18px, 1.8vw, 24px);
+    width: 60%;
+    line-height: 1.6;
+    color: black;
+}
+
+
+.fundo_bolas {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    top: 0px;
+    z-index: 1; /*pra imagem ficar atras do texto, tipo camadas */
+    mix-blend-mode: multiply; /*tipo um overlay */
+}
+
+.corpo .cima h1 {
+    font-family: 'Inter';
+    font-size: 64px;
+    font-weight: 800;
+    margin-left: 4%;
+}
+.corpo .cima p {
+    font-family: 'Inter';
+    font-size: 32px;
+    width: 45%;
+    margin-left: 5%;
+}
+.corpo .cima img {
+    display: flex;
+    margin-left: auto;
+}
+.corpo .baixo h1 {
+    font-family: 'Inter';
+    font-size: 64px;
+    font-weight: 800;
+    margin-left: auto;
+    text-align: right;
+    margin-right: 4%;
+    margin-top: 2%;
+}
+
+.corpo .baixo p {
+    font-family: 'Inter';
+    font-size: 32px;
+    width: 45%;
+    margin-left: auto;
+    text-align: right;
+    margin-right: 5%;
+
+}
+.footer-textos a {
+    color: white;
+    font-family: 'Inter';
+    font-size: 22px;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.footer-textos a:hover {
+    color: rgba(212, 212, 212, 0.412);
+}
+
+
+#Button-login:active{
+  width: 90%;
+  height: 40px;
+  color: white;
+  text-align: center;
+  background-color: rgba(212, 212, 212, 0.412);
+  border-radius: 50px;
+  box-shadow: none;
+}
+#Button-login {
+    background-color: rgba(255, 255, 255, 0.247);
+    border-color: white;
+    border-radius: 50px;
+    width: 90%;
+    height: 40px;
+
+    border: 1px solid rgba(255, 255, 255, 0.685); margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+    padding: 5px 20px;
+
+}
+
+#Button-cadastro:active{
+  width: 90%;
+  height: 40px;
+  color: white;
+  text-align: center;
+  background-color: rgba(212, 212, 212, 0.412);
+  border-radius: 50px;
+  box-shadow: none;
+}
+#Button-cadastro {
+    background-color: rgba(255, 255, 255, 0.247);
+    border-color: white;
+    border-radius: 50px;
+    width: 90%;
+    height: 40px;
+
+    border: 1px solid rgba(255, 255, 255, 0.685); margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+    padding: 5px 20px;
+
+}

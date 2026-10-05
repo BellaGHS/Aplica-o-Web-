@@ -89,7 +89,7 @@ body { /* Aqui é pra resolver um bug que tava criando mais espaço do lado da p
     height: auto;
 }
 
- .intro { /*Aqui é pra resolver um bug que tava dando no fundo_bolhas, o corpo precisa ter o position relative, para a imagem com position absolute possa entrar na div :) */
+.intro { /*Aqui é pra resolver um bug que tava dando no fundo_bolhas, o corpo precisa ter o position relative, para a imagem com position absolute possa entrar na div :) */
     position: relative;
     width: 100%;
     padding: 80px 0;
