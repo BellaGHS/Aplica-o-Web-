@@ -7,13 +7,11 @@
 
 
 .fundo {
-    background: linear-gradient(to top right,#2dbdc5 0%, #30196b 100%);
-    height: 100%;
-    
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: linear-gradient(to top right, #2dbdc5 0%, #30196b 100%);
 }
-
 .menu {
     display: flex;
     justify-content: space-between;
@@ -57,10 +55,10 @@
 }
 .fundo_branco {
     background-color: white;
-    margin-left: 17%;
-    margin-right: 17%;
+    margin-left: 20%; 
+    margin-right: 20%;
     margin-top: 5%;
-    border-radius: 10%;
+    border-radius: 20%;
     
 }
 .fundo_branco h1 {
@@ -74,4 +72,47 @@
     margin-left: 3%;
     color: #00156B;
     font-weight: 600;
+}
+
+.dados {
+    width: min(78%, 780px);
+    margin: 0 auto;
+}
+
+.input-grupo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 16px;
+}
+
+.input-grupo label {
+    margin-bottom: 6px;
+    color: #222;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;  /*pra deixar tudo maiusculo*/
+}
+
+.input-grupo input { /*deixa a caixa do input mais bonitinha*/
+    box-sizing: border-box;
+    width: 100%;
+    height: 38px;
+    padding: 8px 12px;
+    border: 1px solid #999;
+    border-radius: 7px;
+    font: 14px "Inter", sans-serif;
+    outline: none;
+}
+
+.input-grupo input:focus { /*aqui é pra quando selecionar um input, ficar com a borda azul e com uma sombrinha */
+    border-color: #00156b;
+    box-shadow: 0 0 0 2px rgba(0, 21, 107, 0.12);
+}
+
+.input-linha { /*faz ficar um do lado do outro*/
+    display: flex;
+    gap: 18px;
 }
