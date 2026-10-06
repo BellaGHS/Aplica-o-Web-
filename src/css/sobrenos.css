@@ -164,7 +164,7 @@ body { /* Aqui é pra resolver um bug que tava criando mais espaço do lado da p
 }
 
 .corpo .baixo p {
-    font-family: 'Inter';
+     font-family: 'Inter';
     font-size: 32px;
     width: 45%;
     margin-left: auto;
