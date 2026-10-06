@@ -52,8 +52,7 @@ body { /*reciclei isso do sobrenos.css*/
 }
 
 .nav-links-header a:hover{
- color: rgba(212, 212, 212);
- text-decoration: underline;
+ opacity: 50%;
 }
 
 /* textos da pagina em ordem de hierarquia ass: jota*/
