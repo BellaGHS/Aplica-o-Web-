@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body { /* Aqui é pra resolver um bug que tava criando mais espaço do lado da pagina por causa das imagens ultrapassando, ai essa linha de codigo faz com que caso algo ultrapasse o limite, ele apenas corte, e nao crie mais espaço. */
+    overflow-x: hidden;
+}
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    
+    background-color: rgba(255, 255, 255, 0.247);
+    border-color: white;
+    border-radius: 50px;
+    width: 90%;
+    
+    border: 1px solid rgba(255, 255, 255, 0.685);
+    
+    padding: 5px 20px;
+}   
+
+.menu a {
+    color: white;
+    font-family: 'Inter';
+    font-size: 33px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: rgba(212, 212, 212, 0.412);
+}
+
+.menu p {
+    margin: 0 20px;
+}
+
+#logo{
+    width: 239px;
+    height: 73px;
+    object-fit: cover;
+}
+.fundo_gradiente {
+    background: linear-gradient(to top right,#2dbdc5 0%, #30196b 100%);
+    height: 780px;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+}
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 60px auto 0 auto; 
+    gap: 40px;
+}
+
+.titulos .textos {
+    flex: 1;
+    max-width: 55%;
+}
+
+.titulo h1 {
+    color: white;
+    font-family: 'Inter';
+    font-size: clamp(50px, 6vw, 90px);
+    margin-bottom: 20px;
+}
+
+.titulo h2 {
+    color: white;
+    font-family: 'Inter';
+    width: 50%;
+}
+
+.titulo img {
+    width: 45%; 
+    height: auto;
+}
+
+.intro { /*Aqui é pra resolver um bug que tava dando no fundo_bolhas, o corpo precisa ter o position relative, para a imagem com position absolute possa entrar na div :) */
+    position: relative;
+    width: 100%;
+    padding: 80px 0;
+}
+.textos-intro {
+    width: 90%; 
+    max-width: 1300px;
+    margin: 0 auto; /*centralizar */
+}
+
+.textos-intro h1 {
+    font-size: clamp(40px, 5vw, 70px);
+    font-weight: 900;
+    color: transparent;
+    font-family: 'Inter';
+    background: linear-gradient(to right, #2e9bb2 0%, #2f538d 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.textos-intro p {
+    font-family: 'Inter';
+    font-size: clamp(18px, 1.8vw, 24px);
+    width: 60%; 
+    line-height: 1.6;
+    color: #333;
+}
+
+
+.fundo_bolas {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    top: 0px;
+    z-index: -1; /*pra imagem ficar atras do texto, tipo camadas */
+    mix-blend-mode: multiply; /*tipo um overlay */
+}   
+
+.corpo .cima h1 {
+    font-family: 'Inter';
+    font-size: 64px;
+    font-weight: 800;
+    margin-left: 4%;
+}
+.corpo .cima p {
+    font-family: 'Inter';
+    font-size: 32px;
+    width: 45%;
+    margin-left: 5%;
+}
+.corpo .cima img {
+    display: flex;
+    margin-left: auto;
+}
+.corpo .baixo h1 {
+    font-family: 'Inter';
+    font-size: 64px;
+    font-weight: 800;
+    margin-left: auto;
+    text-align: right;
+    margin-right: 4%;
+    margin-top: 2%;
+}
+
+.corpo .baixo p {
+     font-family: 'Inter';
+    font-size: 32px;
+    width: 45%;
+    margin-left: auto;
+    text-align: right;
+    margin-right: 5%;
+    
+}
