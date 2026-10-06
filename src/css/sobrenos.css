@@ -157,11 +157,56 @@ body { /* Aqui é pra resolver um bug que tava criando mais espaço do lado da p
 }
 
 .corpo .baixo p {
-     font-family: 'Inter';
+    font-family: 'Inter';
     font-size: 32px;
     width: 45%;
     margin-left: auto;
     text-align: right;
     margin-right: 5%;
     
+}
+
+.footer_gradiente {
+    background: linear-gradient(to left, #2E1D6D 0%, #2DBDC5 100%  );
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer p {
+    font-family: 'Inter';
+    color: rgba(50, 50, 50, 0.486);
+    margin-right: auto;
+}
+.footer_gradiente button {
+     background-color: rgba(255, 255, 255, 0.247);
+    border: 2px solid rgba(255, 255, 255, 0.316);
+    border-radius: 25px;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
+    padding: 16px 28px;
+    cursor: pointer;
+    width: 150%;
+}
+
+
+.footer_gradiente button:hover {
+    background-color: #2e1d6d65;
+    color: rgba(255, 255, 255, 0.445);
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-right: 10%;
+}
+.borda_baixa {
+    display: flex;
+}
+
+.borda_baixa a {
+    justify-content: space-between;
 }
