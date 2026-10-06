@@ -97,7 +97,7 @@ body { /* Aqui é pra resolver um bug que tava criando mais espaço do lado da p
 .textos-intro {
     width: 90%; 
     max-width: 1300px;
-    margin: 0 auto; /*centralizar */
+    margin-left: 3%; /*centralizar */
 }
 
 .textos-intro h1 {
@@ -145,6 +145,13 @@ body { /* Aqui é pra resolver um bug que tava criando mais espaço do lado da p
 .corpo .cima img {
     display: flex;
     margin-left: auto;
+    margin-right: 3%;
+}
+.corpo .baixo img {
+    display: flex;
+    margin-right: auto;
+    margin-left: 3%;
+    margin-bottom: 3%;
 }
 .corpo .baixo h1 {
     font-family: 'Inter';
@@ -171,6 +178,7 @@ body { /* Aqui é pra resolver um bug que tava criando mais espaço do lado da p
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 50vh;
 }
 
 .footer p {
@@ -190,7 +198,12 @@ body { /* Aqui é pra resolver um bug que tava criando mais espaço do lado da p
     width: 150%;
 }
 
-
+.footer a {
+    color: black;
+}
+.footer a:hover {
+    color: rgba(0, 0, 0, 0.274);
+}
 .footer_gradiente button:hover {
     background-color: #2e1d6d65;
     color: rgba(255, 255, 255, 0.445);
