@@ -8,46 +8,49 @@
 body { /* Aqui é pra resolver um bug que tava criando mais espaço do lado da pagina por causa das imagens ultrapassando, ai essa linha de codigo faz com que caso algo ultrapasse o limite, ele apenas corte, e nao crie mais espaço. */
     overflow-x: hidden;
 }
-.menu {
+.logo-header {
+  height: 100px;
+  display: block;
+}
+
+/* Header feito ass: jota */
+.site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-    
+
+
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    
+
     background-color: rgba(255, 255, 255, 0.247);
     border-color: white;
     border-radius: 50px;
     width: 90%;
-    
+    height: 82px;
+
     border: 1px solid rgba(255, 255, 255, 0.685);
-    
+
     padding: 5px 20px;
-}   
-
-.menu a {
-    color: white;
-    font-family: 'Inter';
-    font-size: 33px;
-    font-weight: 700;
-    text-decoration: none;
 }
 
-.menu a:hover {
-    color: rgba(212, 212, 212, 0.412);
+/* nav é como se fosse uma div só que mais recomendado para a navegação de paginas */
+/* organizacao dos elementos dentro do header */
+.nav-links-header {
+  display: flex;
+  gap: 100px;
 }
 
-.menu p {
-    margin: 0 20px;
+.nav-links-header a{
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
 }
 
-#logo{
-    width: 239px;
-    height: 73px;
-    object-fit: cover;
+.nav-links-header a:hover{
+ opacity: 50%;
 }
 .fundo_gradiente {
     background: linear-gradient(to top right,#2dbdc5 0%, #30196b 100%);

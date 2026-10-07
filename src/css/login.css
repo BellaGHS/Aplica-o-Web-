@@ -1,14 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 :root {
     --azul-botao: #0a1a6e;
     --azul-link: #0000ff;
 }
- 
-* { box-sizing: border-box; }
- 
+
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
+
+    overflow-x: hidden;
     margin: 0;
     min-height: 100vh;
-    font-family: "Segoe UI", Arial, sans-serif;
     color: #000;
     background: linear-gradient(45deg, #2bbfc7 0%, #2a8fb0 30%, #31468a 70%, #2e1f6b 100%);
     background-attachment: fixed;
@@ -17,7 +23,7 @@ body {
     align-items: center;
     padding: 24px 16px 40px;
 }
- 
+
 .btn-voltar {
     position: absolute;
     top: 20px;
@@ -36,43 +42,52 @@ body {
     border-radius: 10px;
 }
 .btn-voltar:hover { background: rgba(255, 255, 255, 0.35); color: #fff; }
- 
-.menu-login {
-    width: 90%;
-    max-width: none;
-    margin: 16px 0 28px;
-    padding: 12px 30px;
+
+.logo-header {
+  height: 100px;
+  display: block;
+}
+
+/* Header feito ass: jota */
+.site-header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    background: linear-gradient(90deg, rgba(255,255,255,0.35), rgba(255,255,255,0.2)); 
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 50px;
-}
- 
-.logo-menu {
-    display: block;
-    width: 165px;
-    height: auto;
-}
- 
-.links-menu {
-    display: flex;
     align-items: center;
-    gap: clamp(24px, 5vw, 100px);
+
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+    background-color: rgba(255, 255, 255, 0.247);
+    border-color: white;
+    border-radius: 50px;
+    width: 90%;
+    height: 82px;
+
+    border: 1px solid rgba(255, 255, 255, 0.685);
+
+    padding: 5px 20px;
 }
- 
-.links-menu a {
-    color: #fff;
-    font-size: clamp(0.95rem, 1.6vw, 1.4rem);
-    font-weight: 1000;
-    font-family: 'Inter', sans-serif;
-    text-decoration: none;
-    white-space: nowrap;
+
+/* nav é como se fosse uma div só que mais recomendado para a navegação de paginas */
+/* organizacao dos elementos dentro do header */
+.nav-links-header {
+  display: flex;
+  gap: 100px;
 }
-.links-menu a:hover { color: rgba(255, 255, 255, 0.6); }
-.links-menu a.ativo { text-decoration: none; }
- 
+
+.nav-links-header a{
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links-header a:hover{
+ opacity: 50%;
+}
+
 .card-login {
     width: 100%;
     max-width: 510px;
@@ -82,15 +97,15 @@ body {
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
- 
+
 .card-login h1 {
     margin: 0 0 28px;
     font-size: 2.6rem;
     font-weight: 800;
 }
- 
+
 .campo { margin-bottom: 28px; text-align: left; }
- 
+
 .campo input {
     width: 100%;
     padding: 8px 10px;
@@ -101,7 +116,7 @@ body {
 }
 .campo input::placeholder { color: #777; font-size: 0.7rem; }
 .campo input:focus { border-color: var(--azul-botao); box-shadow: 0 0 0 2px rgba(10, 26, 110, 0.2); }
- 
+
 .btn-entrar {
     border: 0;
     background: var(--azul-botao);
@@ -113,11 +128,11 @@ body {
     cursor: pointer;
 }
 .btn-entrar:hover { opacity: 0.9; }
- 
+
 .cadastro-link { margin: 26px 0 0; font-size: 1rem; }
 .cadastro-link a { color: var(--azul-link); text-decoration: none; }
 .cadastro-link a:hover { text-decoration: underline; }
- 
+
 /* responsividade */
 @media (max-width: 576px) {
     .card-login { padding: 24px 22px 30px; border-radius: 28px; }
