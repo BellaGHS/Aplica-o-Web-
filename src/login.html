@@ -39,11 +39,23 @@
                 <input type="password" id="senha" name="senha" placeholder="Senha" autocomplete="current-password" required>
             </div>
  
-            <button type="submit" class="btn-entrar">Entrar</button>
+            <button id="entrar-btn" type="submit" class="btn-entrar">Entrar</button>
         </form>
  
         <p class="cadastro-link">Não possui conta? <a href="cadastro.html">Cadastre-se aqui</a></p>
     </main>
+
+    <script>
+        // Esse script é da animação do botao do login junto do css -->
+        const formulario = document.querySelector("#form-login");
+        const botao = document.querySelector("#entrar-btn");
+
+        formulario.addEventListener("submit", () => {
+            botao.disabled = true;
+            botao.textContent = "Entrando...";
+        
+        });
+    </script>
  
 </body>
  

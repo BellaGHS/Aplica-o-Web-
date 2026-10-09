@@ -4,7 +4,7 @@
     --azul-link: #0000ff;
 }
 
-{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -127,7 +127,13 @@ body {
     border-radius: 10px;
     cursor: pointer;
 }
-.btn-entrar:hover { opacity: 0.9; }
+
+.btn-entrar:hover:not(:disabled) { opacity: 0.8; }
+
+.btn-entrar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
 
 .cadastro-link { margin: 26px 0 0; font-size: 1rem; }
 .cadastro-link a { color: var(--azul-link); text-decoration: none; }
