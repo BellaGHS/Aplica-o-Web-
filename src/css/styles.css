@@ -7,7 +7,6 @@ body { /*reciclei isso do sobrenos.css*/
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 .logo-header {
@@ -136,6 +135,14 @@ footer {
   /* justify-content: space-between; */
   gap: 30px;
 }
+.fundo_gradiente {
+    background: linear-gradient(to top right,#2dbdc5 0%, #30196b 100%);
+    height: 780px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
 
 #logo {
     align-items: right;
@@ -215,63 +222,55 @@ footer {
     margin-right: 5%;
 
 }
-.footer-textos a {
-    color: white;
+
+
+.footer_gradiente {
+    background: linear-gradient(to left, #2E1D6D 0%, #2DBDC5 100%  );
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50vh;
+}
+
+.footer p {
     font-family: 'Inter';
-    font-size: 22px;
-    font-weight: 300;
-    text-decoration: none;
-}
-
-.footer-textos a:hover {
-    color: rgba(212, 212, 212, 0.412);
-}
-
-
-#Button-login:active{
-  width: 90%;
-  height: 40px;
-  color: white;
-  text-align: center;
-  background-color: rgba(212, 212, 212, 0.412);
-  border-radius: 50px;
-  box-shadow: none;
-}
-#Button-login {
-    background-color: rgba(255, 255, 255, 0.247);
-    border-color: white;
-    border-radius: 50px;
-    width: 90%;
-    height: 40px;
-
-    border: 1px solid rgba(255, 255, 255, 0.685); margin-left: auto;
+    color: rgba(50, 50, 50, 0.486);
     margin-right: auto;
-    margin-top: 20px;
-
-    padding: 5px 20px;
-
 }
-
-#Button-cadastro:active{
-  width: 90%;
-  height: 40px;
-  color: white;
-  text-align: center;
-  background-color: rgba(212, 212, 212, 0.412);
-  border-radius: 50px;
-  box-shadow: none;
-}
-#Button-cadastro {
+.footer_gradiente button {
     background-color: rgba(255, 255, 255, 0.247);
-    border-color: white;
-    border-radius: 50px;
-    width: 90%;
-    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.316);
+    border-radius: 25px;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
+    padding: 16px 28px;
+    cursor: pointer;
+    width: 150%;
+}
 
-    border: 1px solid rgba(255, 255, 255, 0.685); margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
+.footer a {
+    color: black;
+}
+.footer a:hover {
+    color: rgba(0, 0, 0, 0.274);
+}
+.footer_gradiente button:hover {
+    background-color: #2e1d6d65;
+    color: rgba(255, 255, 255, 0.445);
+}
 
-    padding: 5px 20px;
+.botoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-right: 10%;
+}
+.borda_baixa {
+    display: flex;
+}
 
+.borda_baixa a {
+    justify-content: space-between;
 }
