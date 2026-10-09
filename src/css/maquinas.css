@@ -1,0 +1,181 @@
+:root {
+    --azul-aba: #14487a;
+    --turquesa-botao: #2bbfc7;
+}
+ 
+/* ---------- Título + botão adicionar ---------- */
+.topo-maquinas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+ 
+.topo-maquinas h1 {
+    margin: 0;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 700;
+    color: var(--azul-titulo);
+}
+ 
+.btn-adicionar {
+    background: var(--turquesa-botao);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 6px 42px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+.btn-adicionar:hover { color: #fff; opacity: 0.9; }
+ 
+/* ---------- Abas (filtro sem JavaScript) ---------- */
+/* os radios ficam escondidos; os <label> funcionam como abas */
+.filtro-maquinas { position: absolute; opacity: 0; pointer-events: none; }
+ 
+.abas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    margin-bottom: 14px;
+}
+ 
+.abas label {
+    text-align: center;
+    padding: 6px 8px;
+    font-size: clamp(1rem, 1.7vw, 1.4rem);
+    font-weight: 600;
+    color: var(--azul-aba);
+    background: #fff;
+    border: 1px solid var(--azul-aba);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.abas label span { font-weight: 400; }
+ 
+/* aba ativa: fundo azul e texto branco */
+#aba-todos:checked ~ .abas label[for="aba-todos"],
+#aba-disponivel:checked ~ .abas label[for="aba-disponivel"],
+#aba-indisponivel:checked ~ .abas label[for="aba-indisponivel"] {
+    background: var(--azul-aba);
+    color: #fff;
+}
+ 
+/* esconde os cards que não pertencem à aba escolhida */
+#aba-disponivel:checked ~ .lista-maquinas .card-maquina.indisponivel,
+#aba-indisponivel:checked ~ .lista-maquinas .card-maquina.disponivel {
+    display: none;
+}
+ 
+/* ---------- Lista ---------- */
+.lista-maquinas {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    min-height: 300px;
+}
+ 
+/* ---------- Card de máquina ---------- */
+.card-maquina {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dfe3e8;
+    padding: 8px 18px 8px 8px;
+    margin-bottom: -1px;          /* as bordas dos cards se juntam, como no protótipo */
+}
+ 
+.foto-maquina {
+    flex-shrink: 0;
+    width: 120px;
+    height: 96px;
+    margin-right: 18px;
+    background: #e6e8eb;          /* espaço da foto (troque por <img> depois) */
+    border-radius: 4px;
+    overflow: hidden;
+}
+.foto-maquina img { width: 100%; height: 100%; object-fit: contain; }
+ 
+.info-maquina {
+    flex: 1;
+    min-width: 0;
+    min-height: 70px;
+    padding-right: 24px;
+    margin-right: 56px;                /* mais espaço depois da linha = linha mais à esquerda */
+    border-right: 1px solid #c9ced4;   /* linha vertical antes dos botões */
+    font-size: 0.9rem;
+}
+ 
+.info-maquina h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--azul-aba);
+    min-height: 1.1em;
+}
+ 
+.info-maquina .tipo-maquina {
+    margin: 0 0 6px 14px;
+    min-height: 1em;
+    color: var(--azul-aba);
+}
+ 
+.info-maquina .meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: var(--azul-aba);
+}
+.info-maquina .meta i { margin-right: 3px; }
+.info-maquina .meta a { color: var(--azul-aba); text-decoration: underline; }
+ 
+/* etiqueta de disponibilidade */
+.info-maquina .selo {
+    margin-top: 0;
+    padding: 3px 16px;
+    font-size: 0.85rem;
+    border-radius: 14px;
+}
+.info-maquina .selo.indisponivel {
+    background: #f6b8b8;
+    color: #b02a2a;
+}
+ 
+.acoes-maquina {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 200px;
+    flex-shrink: 0;
+}
+ 
+.acoes-maquina a,
+.acoes-maquina button {
+    display: block;
+    width: 100%;
+    padding: 7px 0;
+    border: 0;
+    border-radius: 16px;
+    background: var(--azul-aba);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+.acoes-maquina a:hover,
+.acoes-maquina button:hover { opacity: 0.9; color: #fff; }
+ 
+/* responsividade */
+@media (max-width: 768px) {
+    .topo-maquinas { flex-wrap: wrap; }
+    .card-maquina { flex-wrap: wrap; gap: 10px; padding-right: 8px; }
+    .info-maquina { border-right: 0; margin-right: 0; padding-right: 0; flex-basis: 100%; order: 3; }
+    .acoes-maquina { flex-direction: row; width: auto; margin-left: auto; }
+    .acoes-maquina a, .acoes-maquina button { padding: 6px 22px; }
+}
+ 

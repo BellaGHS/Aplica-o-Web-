@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Amplia + | Perfil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/inicio-hub.css">
+    <link rel="stylesheet" href="css/perfil-maquina.css">
+</head>
+
+<body class="pagina-perfil">
+    <div class="layout">
+
+        <aside class="sidebar">
+            <img class="logo" src="img/logo-amplia+.png" alt="Amplia +" />
+
+            <nav>
+                <a href="inicio-hub.html"><i class="bi bi-house-door-fill"></i> Início</a>
+                <a href="conexoes.html"><i class="bi bi-globe2"></i> Conexões</a>
+                <a href="minhas-maquinas.html"><i class="bi bi-printer-fill"></i> Minhas máquinas</a>
+                <a href="mensagens.html"><i class="bi bi-chat-left-text-fill"></i> Mensagem</a>
+            </nav>
+
+            <div class="rodape-menu">
+                <a href="configuracoes.html"><i class="bi bi-gear-fill"></i> Configurações</a>
+                <a href="index.html"><i class="bi bi-box-arrow-left"></i> Sair</a>
+            </div>
+        </aside>
+
+        <main class="conteudo">
+
+            <div class="topbar">
+                <div class="topbar-acoes">
+                    <i class="bi bi-bell-fill" aria-label="Notificações"></i>
+                    <a href="perfil.html" aria-label="Meu perfil"><i class="bi bi-person-circle"></i></a>
+                </div>
+            </div>
+
+            <section class="banner-perfil">
+                <div class="avatar-grande"><i class="bi bi-person-fill"></i></div>
+                <div>
+                    <h1>
+                        IMT - Instituto Mauá de Tecnologia
+                    </h1>
+                    <span class="tipo"></span>
+                    <p></p>
+                </div>
+            </section>
+
+            <!-- informaçoes -->
+            <section class="card-perfil">
+                <div class="cabecalho-card">
+                    <h2><i class="bi bi-person"></i> Informações pessoais</h2>
+                    <a href="editar-perfil.html" class="btn-editar">
+                        <i class="bi bi-pencil-fill"></i> <span>Editar perfil</span>
+                    </a>
+                </div>
+
+                <form class="grade-campos">
+                    <div>
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" name="nome" readonly>
+                    </div>
+                    <div>
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" readonly>
+                    </div>
+                    <div>
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" readonly>
+                    </div>
+                    <div>
+                        <label for="localizacao">Localização</label>
+                        <input type="text" id="localizacao" name="localizacao" readonly>
+                    </div>
+                </form>
+            </section>
+
+            <section class="card-perfil">
+                <div class="cabecalho-card">
+                    <h2><i class="bi bi-journal-text"></i> Sobre mim</h2>
+                </div>
+                <p class="texto-sobre">
+                    
+                </p>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+
+</html>
