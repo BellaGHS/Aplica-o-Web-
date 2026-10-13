@@ -90,12 +90,13 @@ body {
 
 .card-login {
     width: 100%;
-    max-width: 510px;
+    max-width: 610px;
     background: #fff;
     border-radius: 36px;
     padding: 28px 44px 36px;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
     text-align: center;
+    margin-top: 100px;
 }
 
 .card-login h1 {
@@ -104,7 +105,7 @@ body {
     font-weight: 800;
 }
 
-.campo { margin-bottom: 28px; text-align: left; }
+.campo { margin-bottom: 28px; text-align: left;}
 
 .campo input {
     width: 100%;
@@ -115,7 +116,7 @@ body {
     outline: 0;
 }
 .campo input::placeholder { color: #777; font-size: 0.7rem; }
-.campo input:focus { border-color: var(--azul-botao); box-shadow: 0 0 0 2px rgba(10, 26, 110, 0.2); }
+.campo input:focus { border-color: #555; box-shadow: none; outline: none; }
 
 .btn-entrar {
     border: 0;
