@@ -86,6 +86,13 @@
                             <label for="razao_social">razao social da Instituição</label>
                             <input id="razao_social" name="razao_social" type="text">
                         </div>
+                        <div class="projeto-maquina">
+                            <h3>Selecione a opção corresponde com o que será fornecido:</h3>
+                            <select id="fornecer">
+                                <option value="maquina">Máquinas</option>
+                                <option value="projeto">Projetos</option>
+                            </select>
+                        </div>
                         <div class="termos">
                             <label>
                                 <input type="checkbox" id="termos" name="termos">
@@ -98,8 +105,8 @@
                     </div>
                 </form>
                 <p class="final">Já possui conta? <a href="login.html">Entre aqui</a></p>
-                </div>
             </div>
+    </div>
     </div>
 
     </section>
@@ -112,7 +119,7 @@
         formulario.addEventListener("submit", () => {
             botao.disabled = true;
             botao.textContent = "Criando...";
-        
+
         });
     </script>
 </body>
