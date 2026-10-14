@@ -527,3 +527,66 @@ button {
         flex-direction: column;
     }
 }
+/* pop up de apagar o projeto (ta igual o do desativar maquina) */
+
+.fundo-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .fundo-modal.aberto {
+    display: flex;
+  }
+
+.conteudo-modal {
+  width: min(92%, 932px);
+  padding: 16px 30px 40px;
+  border-radius: 14px;
+  background: #fff;
+  color: #164979;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.conteudo-modal h2 {
+  margin: 0 0 34px;
+  color: #164979;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.conteudo-modal p {
+  margin: 0 0 26px;
+  color: #164979;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.modal-acoes {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 22px;
+}
+
+.modal-acoes button {
+  width: 265px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 11px;
+  background: #164979;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 300;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.modal-acoes button:hover {
+  background: #103b63;
+}

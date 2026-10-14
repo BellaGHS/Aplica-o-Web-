@@ -79,6 +79,39 @@
             </section>
         </main>
     </div>
+    
+     <!-- Aqui é o pop-up de desativar a maquina, que ta vinculado ja com o botao desativar -->
+    <div id="fundo-modal" class="fundo-modal">
+        <section class="conteudo-modal" role="dialog" aria-modal="true">
+            <h2>Apagar projeto</h2>
+            <p>Tem certeza que você quer apagar este projeto?</p>
+            <p>Essa ação não poderá ser desfeita e todas as informações relacionadas ao projeto serão removidas.</p>
+            <div class="modal-acoes">
+
+                <button type="button" id="cancelar">Cancelar</button>
+                <button type="button" id="confirmar">Apagar projeto</button>
+            </div>
+        </section>
+    </div>
+
+     <!-- Aqui é o javascript do pop-up, pra linkar tudo e fazer ele abrir qnd clicar -->
+    <script>
+        const fundo = document.getElementById("fundo-modal");
+
+        document.getElementById("abrir-modal").addEventListener("click", () => {
+            fundo.classList.add("aberto");
+        });
+
+        document.getElementById("cancelar").addEventListener("click", () => {
+            fundo.classList.remove("aberto");
+        });
+
+        document.getElementById("confirmar").addEventListener("click", () => {
+            // aqui é pra ligar pro botao realmente desativar, no beck-end
+            fundo.classList.remove("aberto");
+        });
+    </script>
+        <!-- O pop up ainda nao esta linkado pq nao tem botao de desativar na página  -->
 </body>
 
 </html>
