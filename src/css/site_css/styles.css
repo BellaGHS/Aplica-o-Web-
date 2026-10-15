@@ -41,7 +41,7 @@ body { /*reciclei isso do sobrenos.css*/
 
 .nav-links-header a {
     font-size: 30px;
-    font-weight: 700;
+    font-weight: 400;
     color: white;
     text-decoration: none;
 }
@@ -119,8 +119,6 @@ body {
 }
 
 #botao-amplia:active {
-    width: 200px;
-    height: 50px;
     color: white;
     text-align: center;
     background-color: hsl(237, 42%, 20%);
