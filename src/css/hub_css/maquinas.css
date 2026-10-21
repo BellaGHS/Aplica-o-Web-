@@ -169,97 +169,6 @@
 }
 .acoes-maquina a:hover,
 .acoes-maquina button:hover { opacity: 0.9; color: #fff; }
-
-/* pop up de desativar a maquina */
-
-.fundo-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
-
-  .fundo-modal.aberto {
-    display: flex;
-  }
-
-.conteudo-modal {
-  width: min(92%, 932px);
-  padding: 16px 30px 40px;
-  border-radius: 14px;
-  background: #fff;
-  color: #164979;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-}
-
-.conteudo-modal h2 {
-  margin: 0 0 34px;
-  color: #164979;
-  font-size: 40px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.conteudo-modal p {
-  margin: 0 0 26px;
-  color: #164979;
-  font-size: 20px;
-  line-height: 1.4;
-}
-
-.modal-acoes {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  margin-top: 22px;
-}
-
-.modal-acoes button {
-  width: 265px;
-  min-height: 44px;
-  border: 0;
-  border-radius: 11px;
-  background: #164979;
-  color: #fff;
-  font-size: 25px;
-  font-weight: 300;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-.modal-acoes button:hover {
-  background: #103b63;
-}
-
-@media (max-width: 600px) {
-  .conteudo-modal {
-    padding: 24px;
-  }
-
-  .conteudo-modal h2 {
-    font-size: 30px;
-    margin-bottom: 24px;
-    font-family: "Inter";
-  }
-
-  .conteudo-modal p {
-    font-family: "Inter";
-    font-size: 17px;
-  }
-
-  .modal-acoes {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .modal-acoes button {
-    width: 100%;
-    font-size: 20px;
-  }
-}
  
 /* responsividade */
 @media (max-width: 768px) {
@@ -270,4 +179,3 @@
     .acoes-maquina a, .acoes-maquina button { padding: 6px 22px; }
 }
  
-

@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+.logo-header {
+  height: 100px;
+  display: block;
+}
+
+/* Header feito ass: jota */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+    background-color: rgba(255, 255, 255, 0.247);
+    border-color: white;
+    border-radius: 50px;
+    width: 90%;
+    height: 82px;
+
+    border: 1px solid rgba(255, 255, 255, 0.685);
+
+    padding: 5px 20px;
+}
+
+/* nav é como se fosse uma div só que mais recomendado para a navegação de paginas */
+/* organizacao dos elementos dentro do header */
+.nav-links-header {
+  display: flex;
+  gap: 100px;
+}
+
+.nav-links-header a{
+  font-size: 30px;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links-header a:hover{
+ opacity: 50%;
+}
+
+.fundo {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to top right, #2dbdc5 0%, #30196b 100%);
+}
+
+#logo{
+    width: 239px;
+    height: 73px;
+    object-fit: cover;
+}
+.fundo_branco {
+    background-color: white;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 100px;
+    margin-bottom: 10%;
+    border-radius: 79px;
+    padding-top: 20px;
+    padding-bottom: 3%;
+}
+.fundo_branco h1 {
+    margin-top: 15px;
+    margin-bottom: 28px;
+    font-family: 'Inter';
+    text-align: center;
+    font-size: 2.6rem;
+    font-weight: 800;
+}
+.fundo_branco h2 {
+    font-family: 'Inter';
+    margin-left: 6%;
+    margin-bottom: 3%;
+    color: #00156B;
+    font-weight: 600;
+}
+
+.dados {
+    width: min(78%, 780px);
+    margin: 0 auto;
+}
+
+.input-grupo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 16px;
+}
+
+.input-grupo label {
+    margin-bottom: 6px;
+    color: #222;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;  /*pra deixar tudo maiusculo*/
+}
+
+.input-grupo input { /*deixa a caixa do input mais bonitinha*/
+    box-sizing: border-box;
+    width: 100%;
+    height: 38px;
+    padding: 8px 12px;
+    border: 1px solid #999;
+    border-radius: 7px;
+    font: 14px "Inter", sans-serif;
+    outline: none;
+}
+
+.input-grupo input:focus { /*aqui é pra quando selecionar um input, ficar com a borda azul e com uma sombrinha */
+    border-color: #00156b;
+    box-shadow: 0 0 0 2px rgba(0, 21, 107, 0.12);
+}
+
+.input-linha { /*faz ficar um do lado do outro*/
+    display: flex;
+    gap: 18px;
+}
+
+.dados p {
+    margin-left: 20%;
+    margin-top: 1%;
+    font-family:  "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+}
+#termos:focus {
+  border-color: #00156b;
+  box-shadow: 0 0 0 2px rgba(0, 21, 107, 0.12);
+}
+#termos {
+    transform: scale(2);
+    margin-right: 10%;
+}
+.termos {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.dados button {
+    display: block;
+    background-color: #2E1D6D;
+    border: #2E1D6D;
+    color: white;
+    font-family:  "Inter", sans-serif;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 20px;
+    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    transition: opacity 0.2s ease, background-color 0.2s ease; /*transição */
+}
+.dados button:hover:not(:disabled) {
+    background-color: #2e1d6d65;
+    color: rgba(255, 255, 255, 0.445);
+}
+
+.dados button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.projeto-maquina h3{
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+}
+
+.projeto-maquina select {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3vh;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.projeto-maquina select:hover {
+    background-color: rgba(169, 166, 166, 0.452);
+    border-color: black;
+}
+.final {
+    margin-top: 3%;
+    text-align: center;
+    font-family:  "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 100%;
+}
