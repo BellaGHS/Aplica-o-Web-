@@ -6,46 +6,56 @@
 }
 
 
+.logo-header {
+  height: 100px;
+  display: block;
+}
+
+/* Header feito ass: jota */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+    background-color: rgba(255, 255, 255, 0.247);
+    border-color: white;
+    border-radius: 50px;
+    width: 90%;
+    height: 82px;
+
+    border: 1px solid rgba(255, 255, 255, 0.685);
+
+    padding: 5px 20px;
+}
+
+/* nav é como se fosse uma div só que mais recomendado para a navegação de paginas */
+/* organizacao dos elementos dentro do header */
+.nav-links-header {
+  display: flex;
+  gap: 100px;
+}
+
+.nav-links-header a{
+  font-size: 30px;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links-header a:hover{
+ opacity: 50%;
+}
+
 .fundo {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     background: linear-gradient(to top right, #2dbdc5 0%, #30196b 100%);
-}
-.menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    
-    background-color: rgba(255, 255, 255, 0.247);
-    border-color: white;
-    border-radius: 50px;
-    width: 90%;
-    
-    border: 1px solid rgba(255, 255, 255, 0.685);
-    
-    padding: 5px 20px;
-}   
-
-.menu a {
-    color: white;
-    font-family: 'Inter';
-    font-size: 33px;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.menu a:hover {
-    color: rgba(212, 212, 212, 0.412);
-}
-
-.menu p {
-    margin: 0 20px;
 }
 
 #logo{
@@ -55,22 +65,26 @@
 }
 .fundo_branco {
     background-color: white;
-    margin-left: 20%; 
+    margin-left: 20%;
     margin-right: 20%;
-    margin-top: 5%;
+    margin-top: 100px;
     margin-bottom: 10%;
     border-radius: 79px;
-    padding-bottom: 5%;
+    padding-top: 20px;
+    padding-bottom: 3%;
 }
 .fundo_branco h1 {
+    margin-top: 15px;
+    margin-bottom: 28px;
     font-family: 'Inter';
-    font-size: clamp(65px, 5vw, 70px);
-    font-weight: 800;
     text-align: center;
+    font-size: 2.6rem;
+    font-weight: 800;
 }
 .fundo_branco h2 {
     font-family: 'Inter';
-    margin-left: 3%;
+    margin-left: 6%;
+    margin-bottom: 3%;
     color: #00156B;
     font-weight: 600;
 }
@@ -120,9 +134,10 @@
 
 .dados p {
     margin-left: 20%;
+    margin-top: 1%;
     font-family:  "Inter", sans-serif;
     font-weight: 600;
-    font-size: 60%;
+    font-size: 11px;
 }
 #termos:focus {
   border-color: #00156b;
@@ -150,12 +165,36 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 5%;
+    transition: opacity 0.2s ease, background-color 0.2s ease; /*transição */
 }
-.dados button:hover {
+.dados button:hover:not(:disabled) {
     background-color: #2e1d6d65;
     color: rgba(255, 255, 255, 0.445);
 }
 
+.dados button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.projeto-maquina h3{
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+}
+
+.projeto-maquina select {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3vh;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.projeto-maquina select:hover {
+    background-color: rgba(169, 166, 166, 0.452);
+    border-color: black;
+}
 .final {
     margin-top: 3%;
     text-align: center;
