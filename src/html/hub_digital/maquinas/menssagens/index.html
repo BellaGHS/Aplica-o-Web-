@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8" />
-    <title>Amplia + | Mensagem </title>
+    <meta charset="UTF-8">
+    <title>Amplia+ | Mensagens</title>
+    <!-- Bootstrap -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -12,124 +12,212 @@
 </head>
 
 <body class="pagina-mensagem">
-    <div class="layout">
-
+    <div class="layout d-flex min-vh-100">
+        <!--menu lateral-->
         <aside class="sidebar">
             <img class="logo" src="/src/img/logo-amplia+.png" alt="Amplia +" />
-
+ 
             <nav>
-                <a href="inicio-hub.html"><i class="bi bi-house-door-fill"></i> Início</a>
-                <a href="conexoes.html"><i class="bi bi-globe2"></i> Conexões</a>
-                <a href="minhas-maquinas.html"><i class="bi bi-printer-fill"></i> Minhas máquinas</a>
-                <a href="mensagens.html"><i class="bi bi-chat-left-text-fill"></i> Mensagem</a>
+                <a href="../inicio-hub/"><i class="bi bi-house-door-fill"></i> Início</a>
+                <a href="../conexoes-maquina/"><i class="bi bi-globe2"></i> Conexões</a>
+                <a href="../minhas-maquinas/"><i class="bi bi-printer-fill"></i> Minhas máquinas</a>
+                <a href=".." class="ativo"><i class="bi bi-chat-left-text-fill"></i> Mensagem</a>
             </nav>
-
+ 
             <div class="rodape-menu">
-                <a href="configuracoes.html"><i class="bi bi-gear-fill"></i> Configurações</a>
+                <a href="../configuracoes/"><i class="bi bi-gear-fill"></i> Configurações</a>
                 <a href="index.html"><i class="bi bi-box-arrow-left"></i> Sair</a>
             </div>
         </aside>
 
-        <main class="conteudo">
 
+        <!-- conteúdo -->
+        <main class="conteudo flex-grow-1">
             <div class="topbar">
                 <div class="topbar-acoes">
                     <i class="bi bi-bell-fill" aria-label="Notificações"></i>
-                    <a href="perfil.html" aria-label="Meu perfil"><i class="bi bi-person-circle"></i></a>
+                    <a href="../perfil-maquina/" aria-label="Meu perfil"><i class="bi bi-person-circle"></i></a>
                 </div>
             </div>
 
-        <!-- caixa mensagem -->
-            <section class="area-perfil">
-                <div class="caixa-perfil">
-                    <h2>Perfis</h2>
-                        <label class="busca-topo">
-                            <i class="bi bi-search"></i>
-                            <input type="text" placeholder="Buscar conversa ...." aria-label="Buscar nome">
-                        </label>
-                    <div class="botao-superior">
-                        <button class="botao-superior ativo" type="button">Todos</button>
-                        <button class="botao-superior" type="button">Não lidos<span id="contador-nao-lidas" class="badge">3</span></button>
+            <!-- mensagens -->
+            <section class="area-mensagens row g-3">
+                <div class="col-12 col-lg-4 coluna-perfis">
+                    <div class="caixa-perfil card border-0 shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <h2 class="titulo-painel mb-3">Perfis</h2>
+
+                            <div class="input-group busca-topo mb-3">
+                                <span class="input-group-text">
+                                    <i class="bi bi-search"></i>
+                                </span>
+                                <input
+                                    type="search"
+                                    class="form-control"
+                                    placeholder="Buscar conversa..."
+                                    aria-label="Buscar conversa">
+                            </div>
+
+                            <div class="filtros-conversa d-flex gap-2 mb-3">
+                                <button
+                                    type="button"
+                                    class="btn btn-filtro ativo flex-fill">
+                                    Todos
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn-filtro flex-fill">
+                                    Não lidos
+                                    <span class="badge contador-ms">
+                                        3
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="list-group lista-conversas">
+                                <button
+                                    type="button"
+                                    class="list-group-item list-group-item-action item-conversa ativa">
+                                    <div class="d-flex justify-content-between gap-2">
+                                        <div class="info-conversa">
+                                            <span class="nome-chat">
+                                                Fab Lab - IMT
+                                            </span>
+                                            <span class="ultima-mensagem">
+                                                Perfeito!
+                                            </span>
+                                        </div>
+                                        <span class="hora-mensagem">
+                                            19:30
+                                        </span>
+                                    </div>
+                                </button>
+                                <button
+                                    type="button"
+                                    class="list-group-item list-group-item-action item-conversa">
+                                    <div class="d-flex justify-content-between gap-2">
+                                        <div class="info-conversa">
+                                            <span class="nome-chat">
+                                                WEB
+                                                <span class="ponto-nao-lido"></span>
+                                            </span>
+                                            <span class="ultima-mensagem">
+                                                Perfeito!
+                                            </span>
+                                        </div>
+                                        <span class="hora-mensagem">
+                                            19:30
+                                        </span>
+                                    </div>
+                                </button>
+                                <button
+                                    type="button"
+                                    class="list-group-item list-group-item-action item-conversa">
+                                    <div class="d-flex justify-content-between gap-2">
+                                        <div class="info-conversa">
+                                            <span class="nome-chat">
+                                                LSKF
+                                                <span class="ponto-nao-lido"></span>
+                                            </span>
+                                            <span class="ultima-mensagem">
+                                                Perfeito!
+                                            </span>
+                                        </div>
+                                        <span class="hora-mensagem">
+                                            19:30
+                                        </span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                
-                <!-- lista de conversa -->
-                    <ul class="lista-conversas">
-                        <li class="item-conversa ativa">
-                            <div class="info-conversa">
-                                <span class="nome-chat">Fab Lab - IMT</span>
-                                <span class="ultima-mensagem">Perfeito!</span>
-                            </div>
-                            <span class="hora-mensagem">19:30</span>
-                        </li>
-
-                        <li class="item-conversa">
-                            <div class="info-conversa">
-                                <span class="nome-chat">WEB <span class="ponto-nao-lido"></span></span>
-                                <span class="ultima-mensagem">Perfeito!</span>
-                            </div>
-                            <span class="hora-mensagem">19:30</span>
-                        </li>
-
-                        <li class="item-conversa">
-                            <div class="info-conversa">
-                                <span class="nome-chat">LSKF <span class="ponto-nao-lido"></span></span>
-                                <span class="ultima-mensagem">Perfeito!</span>
-                            </div>
-                            <span class="hora-mensagem">19:30</span>
-                        </li>
-                    </ul>
                 </div>
-            <div>
-        
-                  <!-- caixa conversa -->
-<div class="caixa-conversa">
 
-        <header class="cabecalho-chat">
-            <h2>Fab Lab - IMT</h2>
-        </header>
-
-        <div class="mensagens">
-            <span class="data-separador">18 de setembro de 2026</span>
-
-            <div class="mensagem recebida">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <span class="hora">10:40</span>
-            </div>
-
-            <div class="mensagem enviada">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <span class="hora">10:40</span>
-            </div>
-
-            <span class="data-separador">20 de setembro de 2026</span>
-
-            <div class="mensagem enviada">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <span class="hora">10:40</span>
-            </div>
-
-            <div class="mensagem recebida">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <span class="hora">10:40</span>
-            </div>
-        </div>
-
-        <form class="barra-mensagem">
-            <button type="button" class="btn-anexo" aria-label="Anexar arquivo">
-                <i class="bi bi-paperclip"></i>
-            </button>
-            <input type="text" placeholder="Digite uma mensagem" aria-label="Digite uma mensagem">
-            <button type="submit" class="btn-enviar" aria-label="Enviar">
-                <i class="bi bi-send-fill"></i>
-            </button>
-        </form>
-
-    </div>
+                <!-- caixa da conversa -->
+                <div class="col-12 col-lg-8 coluna-conversa">
+                    <div class="caixa-conversa card border-0 shadow-sm">
+                        <header class="cabecalho-chat card-header bg-white">
+                            <h2 class="nome-cabecalho mb-0"> Fab Lab - IMT </h2>
+                        </header>
+                        <div class="mensagens card-body">
+                            <div class="separador-data">
+                                <span class="data-separador">
+                                    18 de setembro de 2026
+                                </span>
+                            </div>
+                            <div class="mensagem recebida">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </p>
+                                <span class="hora">
+                                    10:40
+                                </span>
+                            </div>
+                            <div class="mensagem enviada">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </p>
+                                <span class="hora">
+                                    10:42
+                                </span>
+                            </div>
+                            <div class="separador-data">
+                                <span class="data-separador">
+                                    20 de setembro de 2026
+                                </span>
+                            </div>
+                            <div class="mensagem enviada">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </p>
+                                <span class="hora">
+                                    09:30
+                                </span>
+                            </div>
+                            <div class="mensagem recebida">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </p>
+                                <span class="hora">
+                                    09:35
+                                </span>
+                            </div>
+                            <div class="mensagem recebida">
+                                <p>
+                                    Perfeito!
+                                </p>
+                                <span class="hora">
+                                    09:40
+                                </span>
+                            </div>
+                        </div>
+                        <form class="barra-mensagem card-footer bg-white">
+                            <button
+                                type="button"
+                                class="btn btn-anexo"
+                                aria-label="Anexar arquivo">
+                                <i class="bi bi-paperclip"></i>
+                            </button>
+                            <input
+                                type="text"
+                                class="form-control campo-mensagem"
+                                placeholder="Digite uma mensagem"
+                                aria-label="Digite uma mensagem">
+                            <button
+                                type="submit"
+                                class="btn btn-enviar"
+                                aria-label="Enviar mensagem">
+                                <i class="bi bi-send-fill"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </section>
-
         </main>
     </div>
 
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
 </body>
-
 </html>
