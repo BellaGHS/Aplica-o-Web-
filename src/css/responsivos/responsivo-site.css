@@ -1,542 +1,373 @@
-/* Responsividade geral do site */
+*, *::before, *::after { box-sizing: border-box; }
 
-/* Tablet e telas menores */
-@media (max-width: 1024px) {
+img { max-width: 100%; }
 
-    /* Cabeçalho */
+#texto-principal { width: 100%; }
+
+#texto-principal h1 { font-size: clamp(2.1rem, 3.2vw, 80px); }
+#descricao        { font-size: clamp(1rem, 2.1vw, 30px); }
+.textos-intro h1  { font-size: clamp(2.4rem, 10.5vw, 170px); }
+
+#pagina-sobre .textos-intro h1 { font-size: clamp(2.2rem, 8vw, 120px); }
+#pagina-sobre .titulo h2       { font-size: clamp(1.05rem, 2.2vw, 27px); }
+
+.corpo .cima h2,
+.corpo .baixo h2 { font-size: clamp(1.8rem, 4.4vw, 55px); }
+
+.corpo .cima p,
+.corpo .baixo p  { font-size: clamp(1rem, 1.8vw, 25px); }
+
+#botao-amplia {
+    width: min(400px, 100%);
+    height: auto;
+    min-height: 56px;
+    font-size: clamp(1.05rem, 2.2vw, 26px);
+    justify-content: center;
+    text-align: center;
+}
+
+.card-login {
+    margin-left: auto;
+    margin-right: auto;
+    width: min(100% - 32px, 610px);
+}
+
+.fundo_branco {
+    margin-left: auto;
+    margin-right: auto;
+    width: min(100% - 32px, 900px);
+}
+
+.dados button {
+    width: auto;
+    min-width: 160px;
+    padding: 12px 32px;
+}
+
+.site-header { height: auto; min-height: 82px; }
+.logo-header { height: clamp(52px, 7vw, 100px); width: auto; }
+
+.site-footer .footer-logo { width: min(350px, 70%); height: auto; }
+
+@media (max-width: 1200px) {
+
+    .nav-links-header { gap: 48px; }
+    .nav-links-header a { font-size: 20px; }
+
+    .secao-principal { margin-left: 0; padding: 0 5%; }
+
+    .textos-intro p { width: 80%; }
+
+    #p1 { width: 88%; }
+    #p2 { width: 94%; }
+
+    #pagina-sobre .titulo h1 { margin-top: 60px; }
+    #pagina-sobre .titulo .textos { margin-bottom: 90px; }
+}
+
+@media (max-width: 992px) {
+
     .site-header {
+        height: auto;
+        min-height: 0;
+        border-radius: 28px;
+        padding: 10px 18px;
         width: 94%;
-        padding: 5px 15px;
+        flex-wrap: wrap;
     }
 
     .nav-links-header {
-        gap: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+        padding: 10px 0 6px;
     }
 
     .nav-links-header a {
-        font-size: 24px;
-    }
-
-    /* Página inicial */
-    #texto-principal {
         width: 100%;
+        padding: 12px 4px;
+        font-size: 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
     }
 
-    #texto-principal h1 {
-        font-size: 64px;
-        margin-top: 0;
+    .nav-links-header a:last-child { border-bottom: 0; }
+
+    .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.6);
+        padding: 6px 10px;
     }
 
-    #descricao {
-        font-size: 25px;
-        margin-right: 20px;
-        max-width: 90%;
-    }
-
-    #botao-amplia {
-        width: 320px;
-        max-width: 100%;
-        font-size: 23px;
-    }
+    .navbar-toggler:focus { box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25); }
 
     .secao-principal {
-        margin-left: 30px;
+        min-height: auto;
+        padding: 80px 6% 60px;
+        margin-left: 0;
     }
 
-    /* Sobre nós */
-    .fundo_gradiente {
-        min-height: 600px;
-        height: auto;
+    .caixa-principal { max-width: 100%; }
+
+    #texto-principal h1 { margin-top: 0; }
+
+    #botao-amplia { margin-left: 0; }
+
+    .textos-intro p { width: 100%; }
+
+    .fundo_bolas,
+    #pagina-sobre .fundo_bolas {
+        opacity: 0.35;
+        right: -40px;
+        height: 100%;
+        max-width: 60%;
     }
 
-    .titulo {
-        gap: 20px;
-        width: 92%;
-    }
-
-    .titulo h1 {
-        font-size: 55px;
+    #pagina-sobre .titulo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
         margin-top: 30px;
-        margin-left: 15px;
-    }
-
-    .titulo h2 {
-        font-size: 21px;
-        margin-left: 15px;
-        width: 95%;
-    }
-
-    .titulo img {
-        width: 42%;
-        max-width: 450px;
-    }
-
-    .textos-intro {
         width: 92%;
-        margin-left: 4%;
     }
 
-    .textos-intro h1 {
-        font-size: 50px;
+    #pagina-sobre .titulo .textos {
         max-width: 100%;
-        overflow-wrap: anywhere;
+        margin-bottom: 0;
     }
 
-    .textos-intro p {
-        width: 65%;
-        margin-left: 10px;
+    #pagina-sobre .titulo h1 {
+        margin-top: 30px;
+        margin-left: 0;
     }
 
-    .corpo .cima h2,
-    .corpo .baixo h2 {
-        font-size: 42px;
-    }
-
-    .corpo .cima p,
-    .corpo .baixo p {
-        font-size: 21px;
-    }
-
-    .corpo .cima img,
-    .corpo .baixo img {
+    #pagina-sobre .titulo h2 {
         width: 100%;
-        max-width: 450px;
+        margin-left: 0;
     }
 
-    /* Termos e política */
-    .logo {
+    #pagina-sobre .titulo img {
         width: 80%;
-        max-width: 550px;
-        height: auto;
+        margin: 0 auto;
     }
 
-    /* Cadastro */
+    #pagina-sobre .imagem-inicio { margin-bottom: 40px; }
+
+    #pagina-sobre .intro { padding: 50px 0; }
+
+    #pagina-sobre .textos-intro .titulo-pilares { margin-top: 70px; }
+
+    #p1 { width: 100%; margin-bottom: 40px; }
+    #p2 { width: 100%; }
+
+    #pagina-termos .nav-termos img,
+    #pagina-politica .nav-termos img { width: min(320px, 80%); }
+
+    .card-login { margin-top: 40px; padding: 26px 28px 32px; }
+
     .fundo_branco {
-        margin-left: 10%;
-        margin-right: 10%;
+        margin-top: 40px;
+        border-radius: 40px;
+        padding-bottom: 36px;
     }
 
-    .dados button {
-        width: 25%;
-    }
+    .dados { width: min(88%, 780px); }
 
-    /* Login */
-    .card-login {
-        width: 90%;
+    .botao-voltar { margin: 20px 24px; }
+
+    .site-footer .footer-logo { margin-bottom: 20px; }
+
+    .footer-links,
+    .footer-botoes {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 14px;
     }
 }
 
+@media (max-width: 768px) {
 
-/* Celular */
-@media (max-width: 600px) {
+    .secao-principal { padding: 60px 6% 50px; }
 
-    /* Ajuste geral para evitar que os elementos ultrapassem a tela */
-    html,
-    body {
-        width: 100%;
-        overflow-x: hidden;
-    }
+    .midpage { padding-bottom: 20px; }
 
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    /* Cabeçalho */
-    .site-header {
-        width: 94%;
-        height: auto;
-        min-height: 70px;
-        flex-direction: column;
-        gap: 10px;
-        border-radius: 25px;
-        padding: 12px;
-    }
-
-    .logo-header {
-        height: 65px;
-        width: auto;
-    }
-
-    .nav-links-header {
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px 18px;
-    }
-
-    .nav-links-header a {
-        font-size: 16px;
-    }
-
-    /* Página inicial */
-    .secao-principal {
-        width: 100%;
-        min-height: 80vh;
-        margin-left: 0;
-        padding: 40px 6%;
-        box-sizing: border-box;
-    }
-
-    #texto-principal {
-        width: 100%;
-    }
-
-    #texto-principal h1 {
-        font-size: 42px;
-        line-height: 1.15;
-        margin-top: 0;
-        overflow-wrap: break-word;
-    }
-
-    #descricao {
-        font-size: 18px;
-        max-width: 100%;
-        margin-right: 0;
-    }
-
-    #botao-amplia {
-        width: 100%;
-        max-width: 300px;
-        height: 48px;
-        font-size: 18px;
-        margin-left: 0;
-    }
-
-    /* Sobre nós */
-    .fundo_gradiente {
-        width: 100%;
-        min-height: 0;
-        height: auto;
-        padding-bottom: 35px;
-    }
-
-    .titulo {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        width: 90%;
-        margin: 25px auto 0;
-        gap: 15px;
-    }
-
-    .titulos .textos {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-    }
-
-    .titulo h1 {
-        width: 100%;
-        font-size: clamp(34px, 9vw, 42px);
-        line-height: 1.1;
-        margin: 20px 0 10px;
-        overflow-wrap: anywhere;
-    }
-
-    .titulo h2 {
-        width: 100%;
-        font-size: 18px;
-        line-height: 1.5;
-        margin: 0;
-        overflow-wrap: break-word;
-    }
-
-    .titulo img {
-        display: block;
-        width: 100%;
-        max-width: 350px;
-        height: auto;
-        margin: 10px auto 0;
-        object-fit: contain;
-    }
-
-    .imagem-inicio {
-        display: block;
-        width: 100%;
-        max-width: 350px;
-        height: auto;
-        margin: 20px auto 0;
-    }
-
-    .intro {
-        width: 100%;
-        max-width: 100%;
-        padding: 35px 0;
-        overflow: hidden;
-        box-sizing: border-box;
-    }
-
-    .textos-intro {
-        width: 90%;
-        max-width: 100%;
-        margin: 0 auto;
-        box-sizing: border-box;
-    }
-
-    .textos-intro h1 {
-        width: 100%;
-        max-width: 100%;
-        font-size: clamp(30px, 8vw, 38px);
-        line-height: 1.1;
-        margin-bottom: 18px;
-        overflow-wrap: anywhere;
-        word-break: normal;
-    }
-
-    .textos-intro p {
-        width: 100%;
-        max-width: 100%;
-        font-size: 17px;
-        line-height: 1.6;
-        margin: 0 0 25px;
-        overflow-wrap: break-word;
-    }
-
-    .fundo_bolas {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        right: -80px;
-        top: 0;
-        opacity: 0.25;
-        pointer-events: none;
-    }
-
-    .corpo {
-        width: 100%;
-        padding: 20px 5% 40px;
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        box-sizing: border-box;
-    }
+    .textos-intro { width: 92%; }
 
     .corpo .cima,
     .corpo .baixo {
-        width: 100%;
+        grid-template-columns: 1fr;
+        row-gap: 10px;
         min-height: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-        box-sizing: border-box;
     }
+
+    .corpo .baixo > div { order: 1; }
+    .corpo .baixo > img { order: 2; }
 
     .corpo .cima h2,
-    .corpo .baixo h2 {
-        width: 100%;
-        font-size: clamp(27px, 7vw, 32px);
-        line-height: 1.2;
-        margin: 0;
-        overflow-wrap: break-word;
-    }
-
-    .corpo .cima p,
-    .corpo .baixo p {
-        width: 100%;
-        max-width: 100%;
-        font-size: 17px;
-        line-height: 1.6;
-        margin: 5px 0;
-        overflow-wrap: break-word;
-    }
+    .corpo .baixo h2 { margin-left: 0; }
 
     .corpo .cima img,
     .corpo .baixo img {
-        display: block;
-        width: 100%;
-        max-width: 350px;
-        height: auto;
-        margin: 10px auto;
-        justify-self: center;
+        max-width: 420px;
+        margin: 10px auto 24px;
     }
 
-    /* Cadastro */
-    .fundo_branco {
-        width: 94%;
-        margin: 40px auto;
-        border-radius: 35px;
-        padding: 20px 0 30px;
-    }
-
-    .fundo_branco h1 {
-        font-size: 2rem;
-        margin: 15px 10px 25px;
-    }
-
-    .fundo_branco h2 {
-        font-size: 1.3rem;
-        margin-left: 6%;
-        margin-bottom: 20px;
-    }
-
-    .dados {
-        width: 88%;
-    }
+    .corpo { padding: 20px 6% 40px; }
 
     .input-linha {
         flex-direction: column;
         gap: 0;
     }
 
-    .dados p {
-        margin-left: 0;
-        font-size: 11px;
-    }
+    .dados { width: 88%; }
 
-    .termos {
-        line-height: 1.6;
-    }
+    .dados p { margin-left: 0; }
+
+    .fundo_branco h2 { margin-left: 0; text-align: center; }
+
+    .fundo_branco h1 { font-size: 2rem; }
+
+    .projeto-maquina select { width: 100%; }
 
     #termos {
-        transform: scale(1.3);
-        margin-right: 5px;
+        transform: scale(1.4);
+        margin-right: 14px;
+        margin-left: 4px;
     }
 
-    .dados button {
-        width: 60%;
-        max-width: 200px;
-    }
-
-    .final {
+    .termos label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
         font-size: 14px;
+        line-height: 1.5;
     }
 
-    /* Login */
-    .card-login {
+    #pagina-termos .secao-principal,
+    #pagina-politica .secao-principal { padding: 0 4%; }
+
+    #pagina-termos .caixa-principal,
+    #pagina-politica .caixa-principal {
+        margin: 24px auto;
+        padding: 0 8px;
+    }
+
+    #pagina-termos .titulo h1,
+    #pagina-politica .titulo h1 { font-size: 1.7rem; }
+
+    .footer-inferior #direitos-reservados {
+        position: static !important;
+        margin: 6px 0 0 !important;
         width: 100%;
-        max-width: 450px;
-        margin: 60px auto 0;
-        padding: 24px 22px 30px;
-        border-radius: 28px;
-        box-sizing: border-box;
-    }
-
-    .card-login h1 {
-        font-size: 2rem;
-    }
-
-    .campo input {
-        font-size: 14px;
-    }
-
-    .btn-entrar {
-        font-size: 1rem;
-    }
-
-    /* Termos e política */
-    .logo {
-        width: 85%;
-        max-width: 350px;
-        height: auto;
-    }
-
-    .caixa-principal {
-        margin: 25px auto;
-        width: 88%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Rodapé */
-    .footer-principal {
-        flex-direction: column;
-        gap: 25px;
         text-align: center;
-        padding: 35px 20px;
     }
 
-    .footer-logo {
+    .footer-inferior { flex-direction: column; gap: 4px; }
+}
+
+@media (max-width: 576px) {
+
+    .site-header {
+        width: 92%;
+        margin-top: 12px;
+        border-radius: 22px;
+    }
+
+    .secao-principal { padding: 50px 6% 40px; }
+
+    #descricao { max-width: 100%; }
+
+    #botao-amplia {
         width: 100%;
+        font-size: 1.05rem;
+        min-height: 52px;
     }
 
-    .footer-logo img {
-        width: 200px;
+    .fundo_bolas,
+    #pagina-sobre .fundo_bolas { display: none; }
+
+    .textos-intro h1 { margin-bottom: 12px; }
+
+    #pagina-sobre .titulo img { width: 100%; }
+
+    .corpo .cima img,
+    .corpo .baixo img { max-width: 100%; }
+
+    .card-login {
+        border-radius: 24px;
+        padding: 22px 18px 28px;
+        margin-top: 24px;
     }
+
+    .card-login h1 { font-size: 2rem; margin-bottom: 20px; }
+
+    .campo { margin-bottom: 18px; }
+
+    .campo input,
+    .input-grupo input { font-size: 16px; }
+
+    .btn-entrar { width: 100%; padding: 12px 24px; }
+
+    .fundo_branco {
+        border-radius: 24px;
+        margin-top: 24px;
+        width: calc(100% - 24px);
+    }
+
+    .dados { width: 90%; }
+
+    .dados button { width: 100%; min-width: 0; }
+
+    .botao-voltar {
+        margin: 16px;
+        font-size: 15px;
+        padding: 9px 14px;
+    }
+
+    .site-footer .footer-logo { width: 200px; margin-bottom: 14px; }
 
     .footer-links,
-    .footer-botoes {
-        align-items: center;
-    }
+    .footer-botoes { justify-content: flex-start; }
 
-    .footer-inferior {
-        padding: 8px 10px;
-        text-align: center;
+    .footer-links a { font-size: 16px; }
+
+    .footer-inferior a,
+    .footer-inferior span { font-size: 14px; }
+}
+
+@media (max-width: 380px) {
+
+    .logo-header { height: 46px; }
+
+    .site-header { padding: 8px 12px; }
+
+    .secao-principal { padding: 40px 5% 32px; }
+
+    .fundo_branco h1,
+    .card-login h1 { font-size: 1.7rem; }
+
+    .footer-botoes { flex-direction: column; width: 100%; }
+
+    .site-footer .footer-botoes .btn { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
     }
 }
 
-
-/* Ajustes para tablets menores e celulares */
-@media (max-width: 768px) {
-
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .intro,
-    .corpo,
-    .textos-intro,
-    .titulo {
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Corrige os títulos "O que é o AMPLIA+" e "NOSSOS PILARES" */
-    .textos-intro h1 {
-        width: 100%;
-        max-width: 100%;
-        font-size: clamp(30px, 8vw, 45px);
-        line-height: 1.1;
-        overflow-wrap: anywhere;
-        box-sizing: border-box;
-    }
-
-    .textos-intro p {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Impede que o fundo decorativo provoque excesso de largura */
-    .fundo_bolas {
-        max-width: 100%;
-        pointer-events: none;
-    }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 2px;
 }
 
-
-/* Pilares: ajustes para tablet e celular (fica no fim do arquivo para prevalecer) */
-@media (max-width: 1024px) {
-    .textos-intro .titulo-pilares {
-        margin-top: 100px;
-    }
-
-    .corpo.corpo-pilares {
-        margin-top: -100px;
-    }
-}
-
-@media (max-width: 768px) {
-    .textos-intro .titulo-pilares {
-        margin-top: 40px;
-        margin-bottom: 0;
-        font-size: clamp(30px, 8.5vw, 48px);
-        line-height: 1.1;
-    }
-
-    /* sem margem negativa: o conteúdo começa depois do título, sem sobrepor */
-    .corpo.corpo-pilares {
-        margin-top: 0;
-    }
-}
-
-
-/* Celular: na seção "Visão" a imagem vem depois do texto (no HTML ela vem antes) */
-@media (max-width: 600px) {
-    .corpo .baixo {
-        flex-direction: column-reverse;
-    }
+#pagina-termos a:focus-visible,
+#pagina-politica a:focus-visible,
+.fundo_branco a:focus-visible,
+.card-login a:focus-visible {
+    outline-color: #1f2367;
 }
