@@ -4,7 +4,7 @@ img { max-width: 100%; }
 
 #texto-principal { width: 100%; }
 
-#texto-principal h1 { font-size: clamp(2.1rem, 3.2vw, 80px); }
+#texto-principal h1 { font-size: clamp(2.1rem, 5.1vw, 80px); }
 #descricao        { font-size: clamp(1rem, 2.1vw, 30px); }
 .textos-intro h1  { font-size: clamp(2.4rem, 10.5vw, 170px); }
 
@@ -16,6 +16,13 @@ img { max-width: 100%; }
 
 .corpo .cima p,
 .corpo .baixo p  { font-size: clamp(1rem, 1.8vw, 25px); }
+
+.secao-principal {
+    margin-left: 0;
+    padding: 0 2.4% 0 calc(2.4% + 70px);
+}
+
+.midpage { overflow: hidden; }
 
 #botao-amplia {
     width: min(400px, 100%);
@@ -45,16 +52,16 @@ img { max-width: 100%; }
 }
 
 .site-header { height: auto; min-height: 82px; }
-.logo-header { height: clamp(52px, 7vw, 100px); width: auto; }
+.logo-header { height: clamp(44px, 6vw, 72px); width: auto; }
 
 .site-footer .footer-logo { width: min(350px, 70%); height: auto; }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199.98px) {
 
     .nav-links-header { gap: 48px; }
     .nav-links-header a { font-size: 20px; }
 
-    .secao-principal { margin-left: 0; padding: 0 5%; }
+    .secao-principal { padding: 0 5%; }
 
     .textos-intro p { width: 80%; }
 
@@ -65,7 +72,7 @@ img { max-width: 100%; }
     #pagina-sobre .titulo .textos { margin-bottom: 90px; }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991.98px) {
 
     .site-header {
         height: auto;
@@ -81,13 +88,13 @@ img { max-width: 100%; }
         align-items: flex-start;
         gap: 0;
         width: 100%;
-        padding: 10px 0 6px;
+        padding: 6px 0 2px;
     }
 
     .nav-links-header a {
         width: 100%;
-        padding: 12px 4px;
-        font-size: 18px;
+        padding: 11px 4px;
+        font-size: 17px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.25);
     }
 
@@ -103,7 +110,6 @@ img { max-width: 100%; }
     .secao-principal {
         min-height: auto;
         padding: 80px 6% 60px;
-        margin-left: 0;
     }
 
     .caixa-principal { max-width: 100%; }
@@ -117,8 +123,6 @@ img { max-width: 100%; }
     .fundo_bolas,
     #pagina-sobre .fundo_bolas {
         opacity: 0.35;
-        right: -40px;
-        height: 100%;
         max-width: 60%;
     }
 
@@ -184,7 +188,7 @@ img { max-width: 100%; }
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
 
     .secao-principal { padding: 60px 6% 50px; }
 
@@ -264,7 +268,7 @@ img { max-width: 100%; }
     .footer-inferior { flex-direction: column; gap: 4px; }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575.98px) {
 
     .site-header {
         width: 92%;
@@ -334,9 +338,9 @@ img { max-width: 100%; }
     .footer-inferior span { font-size: 14px; }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 379.98px) {
 
-    .logo-header { height: 46px; }
+    .logo-header { height: 42px; }
 
     .site-header { padding: 8px 12px; }
 
