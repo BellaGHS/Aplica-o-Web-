@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-BR">
+ 
+<head>
+    <meta charset="UTF-8" />
+    <title>Amplia + | Editar máquina</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/src/css/hub_css/inicio-hub.css">
+    <link rel="stylesheet" href="/src/css/hub_css/editar-maquina.css">
+</head>
+ 
+<body class="pagina-editar-maquina">
+    <div class="layout">
+ 
+        <aside class="sidebar">
+            <img class="logo" src="/src/img/logo-amplia+.png" alt="Amplia +" />
+ 
+            <nav>
+                <a href="../inicio-hub/"><i class="bi bi-house-door-fill"></i> Início</a>
+                <a href="../conexoes-maquina/"><i class="bi bi-globe2"></i> Conexões</a>
+                <a href="../minhas-maquinas/"><i class="bi bi-printer-fill"></i> Minhas máquinas</a>
+                <a href="../menssagens/"><i class="bi bi-chat-left-text-fill"></i> Mensagem</a>
+            </nav>
+ 
+            <div class="rodape-menu">
+                <a href="../configuracoes/"><i class="bi bi-gear-fill"></i> Configurações</a>
+                <a href="/src/html/site/"><i class="bi bi-box-arrow-left"></i> Sair</a>
+            </div>
+        </aside>
+ 
+        <main class="conteudo">
+ 
+            <div class="topbar">
+                <div class="topbar-acoes">
+                    <i class="bi bi-bell-fill" aria-label="Notificações"></i>
+                    <a href="../perfil-maquina/" aria-label="Meu perfil"><i class="bi bi-person-circle"></i></a>
+                </div>
+            </div>
+ 
+            <h1 class="titulo-pagina">Editar máquina</h1>
+ 
+            <!-- só volta para minhas maquinas -->
+            <form class="form-maquina" action="../minhas-maquinas/" method="get" enctype="multipart/form-data">
+ 
+                <div class="colunas-maquina">
+ 
+                    <!-- coluna da esquerda -->
+                    <div class="coluna-maquina">
+                        <div class="grupo-campo">
+                            <label for="nome-impressora">Nome da impressora</label>
+                            <input type="text" id="nome-impressora" name="nome_impressora">
+                        </div>
+ 
+                        <div class="grupo-campo">
+                            <label for="marca">Marca</label>
+                            <input type="text" id="marca" name="marca">
+                        </div>
+ 
+                        <div class="grupo-campo">
+                            <label for="modelo">Modelo</label>
+                            <input type="text" id="modelo" name="modelo">
+                        </div>
+ 
+                        <div class="grupo-campo">
+                            <span class="rotulo">Materiais disponíveis</span>
+                            <div class="opcoes-linha materiais">
+                                <label><input type="checkbox" name="materiais" value="PLA"> PLA</label>
+                                <label><input type="checkbox" name="materiais" value="PETG"> PETG</label>
+                                <label><input type="checkbox" name="materiais" value="ABS"> ABS</label>
+                                <label><input type="checkbox" name="materiais" value="TPU"> TPU</label>
+                                <label><input type="checkbox" name="materiais" value="Resina fotossensível"> Resina Fotossensível</label>
+                            </div>
+                        </div>
+ 
+                         <div class="grupo-campo">
+                            <span class="rotulo">Imagem</span>
+                            <small class="dica-imagem">Anexe a imagem da máquina</small>
+                            <label class="upload-imagem" title="Escolher imagem">
+                                <span class="icone-imagem">
+                                    <svg viewBox="0 0 48 40" width="46" height="38" fill="none" stroke="currentColor"
+                                        stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+                                        <rect x="2" y="2" width="44" height="36" rx="4" />
+                                        <circle cx="35" cy="13" r="3.6" />
+                                        <path d="M2 31 L14 19 L23 28 L31 21 L46 34" />
+                                    </svg>
+                                </span>
+                                <input type="file" name="imagem" accept="image/*">
+                            </label>
+                        </div>
+                    </div>
+ 
+                    <!-- coluna da direita -->
+                    <div class="coluna-maquina">
+                        <div class="grupo-campo">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" id="cidade" name="cidade">
+                        </div>
+ 
+                        <div class="grupo-campo">
+                            <label for="estado">Estado</label>
+                            <input type="text" id="estado" name="estado">
+                        </div>
+ 
+                        <div class="grupo-campo">
+                            <span class="rotulo">Disponibilidade</span>
+                            <div class="opcoes-linha">
+                                <label><input type="radio" name="disponibilidade" value="disponivel"> Disponível</label>
+                                <label><input type="radio" name="disponibilidade" value="indisponivel"> Indisponível</label>
+                            </div>
+                        </div>
+ 
+                        <div class="grupo-campo">
+                            <label for="descricao">Descrição</label>
+                            <textarea id="descricao" name="descricao"></textarea>
+                        </div>
+                    </div>
+ 
+                </div>
+ 
+                <div class="acoes-maquina-form">
+                    <button type="submit" class="btn-enviar-maquina">Editar</button>
+                </div>
+            </form>
+ 
+        </main>
+    </div>
+</body>
+ 
+</html>
