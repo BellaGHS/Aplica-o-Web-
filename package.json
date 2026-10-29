@@ -1,5 +1,29 @@
 {
   "dependencies": {
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
     "neo4j-driver": "^6.2.0"
+  },
+  "name": "aplica-o-web-",
+  "version": "1.0.0",
+  "description": "Aplicação web desenvolvida pelos alunos do 2º semestre do Instituto Mauá de Tecnologia como parte do Projeto Integrador.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BellaGHS/Aplica-o-Web-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/BellaGHS/Aplica-o-Web-/issues"
+  },
+  "homepage": "https://github.com/BellaGHS/Aplica-o-Web-#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }
