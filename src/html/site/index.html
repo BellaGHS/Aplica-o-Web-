@@ -515,41 +515,40 @@
                 <div class="fundo_branco">
                 <h1>Crie sua conta</h1>
                 <h2>Dados pessoais</h2>
-                <form id="cadastro">
+                <form id="cadastro" novalidate>
                     <div class="dados">
                         <div class="dados">
                             <div class="input-grupo">
-                                <label for="nome">Nome completo</label>
-                                <input id="nome" name="nome" type="text">
+                                <label for="cad-nome">Nome completo</label>
+                                <input id="cad-nome" name="nome" type="text" required minlength="3" autocomplete="name">
                             </div>
-
 
                             <div class="input-linha">
                                 <div class="input-grupo">
-                                    <label for="cpf">CPF</label>
-                                    <input id="cpf" name="cpf" type="text">
+                                    <label for="cad-cpf">CPF</label>
+                                    <input id="cad-cpf" name="cpf" type="text" required inputmode="numeric" placeholder="000.000.00-00">
                                 </div>
 
                                 <div class="input-grupo">
-                                    <label for="telefone">Telefone</label>
-                                    <input id="telefone" name="telefone" type="tel">
+                                    <label for="cad-telefone">Telefone</label>
+                                    <input id="cad-telefone" name="telefone" type="tel" required autocomplete="tel">
                                 </div>
                             </div>
 
                             <div class="input-grupo">
-                                <label for="email">E-mail</label>
-                                <input id="email" name="email" type="email">
+                                <label for="cad-email">E-mail</label>
+                                <input id="cad-email" name="email" type="email" required autocomplete="email">
                             </div>
 
                             <div class="input-linha">
                                 <div class="input-grupo">
-                                    <label for="senha">Senha</label>
-                                    <input id="senha" name="senha" type="password">
+                                    <label for="cad-senha">Senha</label>
+                                    <input id="cad-senha" name="senha" type="password" required minlength="8" autocomplete="new-password">
                                 </div>
 
                                 <div class="input-grupo">
-                                    <label for="confirmar-senha">Confirmar a senha</label>
-                                    <input id="confirmar-senha" name="confirmar-senha" type="password">
+                                    <label for="cad-confirmar">Confirmar a senha</label>
+                                    <input id="cad-confirmar" name="confirmar" type="password" required autocomplete="new-password">
                                 </div>
                             </div>
                         </div>
@@ -563,22 +562,22 @@
                     <h2>Dados da Instituição</h2>
                     <div class="dados">
                         <div class="input-grupo">
-                            <label for="cnpj">cnpj</label>
-                            <input id="cnpj" name="cnpj" type="text">
+                            <label for="cad-cnpj">cnpj</label>
+                            <input id="cad-cnpj" name="cnpj" type="text" required>
                         </div>
                         <div class="input-grupo">
-                            <label for="razao_social">razao social da Instituição</label>
-                            <input id="razao_social" name="razao_social" type="text">
+                            <label for="cad-razao">razao social da Instituição</label>
+                            <input id="cad-razao" name="razao" type="text" required>
                         </div>
                         <div class="projeto-maquina">
                             <h3>Selecione a opção corresponde com o que será fornecido:</h3>
-                            <select id="fornecer">
+                            <select id="fornecer" required>
                                 <option value="maquina">Máquinas</option>
                                 <option value="projeto">Projetos</option>
                             </select>
                         </div>
                         <div class="termos d-flex justify-content-center align-items-start gap-2">
-                            <input type="checkbox" id="termos" name="termos">
+                            <input type="checkbox" id="termos" name="termos" required>
 
                             <label for="termos">
                                 Ao clicar você concorda com os nossos
@@ -635,17 +634,8 @@
 
 
 <script>
-    // Páginas disponíveis no site
-    const VIEWS = [
-        'home',
-        'sobre',
-        'login',
-        'cadastro',
-        'termos',
-        'politica'
-    ];
+    const VIEWS = ['home', 'sobre', 'login', 'cadastro', 'termos', 'politica'];
 
-    // Títulos das páginas
     const TITULOS = {
         home: 'Home',
         sobre: 'Sobre nós',
@@ -655,161 +645,62 @@
         politica: 'Política de Privacidade'
     };
 
-    // Função para mostrar a página selecionada
     function mostrarPagina(nome) {
-
-        // Verifica se a página existe
-        const paginaExiste = document.querySelector(
-            `[data-view="${nome}"]`
-        );
-
-        if (!VIEWS.includes(nome) || !paginaExiste) {
+        if (!VIEWS.includes(nome) || !document.querySelector(`[data-view="${nome}"]`)) {
             nome = 'home';
         }
 
-        // Mostra ou esconde o nav principal
         const navPrincipal = document.getElementById('nav-principal');
-
         if (navPrincipal) {
             navPrincipal.style.display =
-                (nome === 'termos' || nome === 'politica' || nome === 'login' || nome === 'cadastro') ? 'none' : '';
+                ['termos', 'politica', 'login', 'cadastro'].includes(nome) ? 'none' : '';
         }
-
 
         const footerPrincipal = document.getElementById('footer-principal');
-
         if (footerPrincipal) {
             footerPrincipal.style.display =
-                (nome === 'login' || nome === 'cadastro') ? 'none' : '';
+                ['login', 'cadastro'].includes(nome) ? 'none' : '';
         }
 
-        // Mostra somente a página selecionada
         document.querySelectorAll('[data-view]').forEach(pagina => {
             pagina.hidden = pagina.dataset.view !== nome;
         });
 
-        // Atualiza o link ativo do menu
         document.querySelectorAll('.navbar .nav-link').forEach(link => {
-            link.classList.toggle(
-                'active',
-                link.getAttribute('href') === '#' + nome
-            );
+            link.classList.toggle('active', link.getAttribute('href') === '#' + nome);
         });
 
-        // Atualiza o título da aba do navegador
         document.title = TITULOS[nome] + ' | Amplia +';
 
-        // Fecha o menu responsivo, caso esteja aberto
         const menu = document.getElementById('menuPrincipal');
-
         if (menu && menu.classList.contains('show')) {
             bootstrap.Collapse.getOrCreateInstance(menu).hide();
         }
 
-        // Volta para o topo da página
         window.scrollTo(0, 0);
     }
 
-    // Navegação pelos links internos
-    document.addEventListener('click', function(e) {
-
+    document.addEventListener('click', function (e) {
         const link = e.target.closest('a[href^="#"]');
-
         if (!link) return;
 
         const nome = link.getAttribute('href').slice(1);
-
-        // Ignora links que não representam páginas
         if (!VIEWS.includes(nome)) return;
 
         e.preventDefault();
-
-        // Atualiza o endereço no navegador
         if (location.hash !== '#' + nome) {
             history.pushState(null, '', '#' + nome);
         }
-
-        // Mostra a página escolhida
         mostrarPagina(nome);
     });
 
-    // Permite voltar e avançar pelo navegador
-    window.addEventListener('popstate', function() {
+    window.addEventListener('popstate', function () {
         mostrarPagina(location.hash.slice(1));
     });
 
-    // Abre a página correspondente ao endereço atual
     mostrarPagina(location.hash.slice(1));
-
-
-    // =========================
-    // LOGIN
-    // =========================
-
-    const formLogin = document.getElementById('form-login');
-
-    if (formLogin) {
-        formLogin.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const botao = document.getElementById('entrar-btn');
-
-            if (botao) {
-                botao.disabled = true;
-                botao.textContent = 'Entrando...';
-            }
-
-            // Adicione aqui a integração com a autenticação,
-            // caso exista um backend para o projeto.
-        });
-    }
-
-
-    // =========================
-    // CADASTRO
-    // =========================
-
-    const formCadastro = document.getElementById('cadastro');
-    const senha = document.getElementById('cad-senha');
-    const confirmar = document.getElementById('confirmar-senha');
-
-    if (formCadastro && senha && confirmar) {
-
-        // Verifica se as senhas são iguais
-        function validarConfirmacao() {
-            confirmar.setCustomValidity(
-                confirmar.value && confirmar.value !== senha.value
-                    ? 'As senhas não coincidem'
-                    : ''
-            );
-        }
-
-        senha.addEventListener('input', validarConfirmacao);
-        confirmar.addEventListener('input', validarConfirmacao);
-
-        // Valida o formulário antes do envio
-        formCadastro.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            validarConfirmacao();
-
-            formCadastro.classList.add('was-validated');
-
-            if (!formCadastro.reportValidity()) {
-                return;
-            }
-
-            const botao = document.getElementById('criar-btn');
-
-            if (botao) {
-                botao.disabled = true;
-                botao.textContent = 'Criando...';
-            }
-
-            // Adicione aqui a integração com o cadastro,
-            // caso exista um backend para o projeto.
-        });
-    }
 </script>
+
+<script src="../../js/site/cadastro.js"></script>
 </body>
 </html>
