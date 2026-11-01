@@ -1,25 +1,57 @@
 const form = document.getElementById('cadastro');
 
 if (form) {
+    const { cpfValido, cnpjValido, senhaForte } = Validacoes;
+
     const $ = (id) => document.getElementById(id);
     const senha = $('cad-senha');
     const confirmar = $('cad-confirmar');
     const cpf = $('cad-cpf');
     const cnpj = $('cad-cnpj');
 
-    function cpfValido(valor) {
-        const c = valor.replace(/\D/g, '');
-        if (c.length !== 11 || /^(\d)\1+$/.test(c)) return false;
-        const dv = (len) => {
-            let soma = 0;
-            for (let i = 0; i < len; i++) soma += Number(c[i]) * (len + 1 - i);
-            const r = (soma * 10) % 11;
-            return r === 10 ? 0 : r;
-        };
-        return dv(9) === Number(c[9]) && dv(10) === Number(c[10]);
+    function validar() {
+        cpf.setCustomValidity(cpfValido(cpf.value) ? '' : 'CPF inválido');
+        cnpj.setCustomValidity(cnpjValido(cnpj.value) ? '' : 'CNPJ inválido');
+        senha.setCustomValidity(
+        senhaForte(senha.value) ? '' : 'Mínimo 8 caracteres, com maiúscula, minúscula, número e símbolo');
+        confirmar.setCustomValidity(confirmar.value === senha.value ? '' : 'As senhas não coincidem');
     }
-    const cnpjValido = (v) => /^[A-Z0-9]{12}\d{2}$/.teste(v.replace(/[.\/-]/g, '').toUpperCase());
 
-    const senhaForte = (s) => s.length >= 8 && /[a-z]/.test(s) && /[A-Z]/.test(s) && /\d/.test(s) && /[^A-Za-z0-9]/.test(s);
+    [cpf, cnpj, senha, confirmar].forEach((el) => el.addEventListener('input', validar));
 
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        validar();
+        form.classList.add('was-validated');
+        if (!form.reportValidity()) return;
+
+        const botao = $('criar-btn');
+        botao.disabled = true;
+        botao.textContent = 'Criando...';
+
+        const dados = {
+        nome: $('cad-nome').value.trim(),
+        cpf: cpf.value.replace(/\D/g, ''),
+        telefone: $('cad-telefone').value.trim(),
+        email: $('cad-email').value.trim().toLowerCase(),
+        senha: senha.value,
+        cnpj: cnpj.value.replace(/[.\/-]/g, ''),
+        razaoSocial: $('cad-razao').value.trim(),
+        fornece: $('fornecer').value,
+    };
+
+    try {
+        const res = await fetch('/api/cadastro', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(dados),
+        });
+        if (!res.ok) throw new Error((await res.json()).mensagem || 'Erro ao cadastrar');
+        location.hash = '#login';
+    } catch (err) {
+        alert(err.message);
+        botao.disabled = false;
+        botao.textContent = 'Criar';
+        }
+    });
 }

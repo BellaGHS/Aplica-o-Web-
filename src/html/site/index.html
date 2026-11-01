@@ -464,11 +464,10 @@
                 <label for="email" class="visually-hidden">E-mail</label>
                 <input
                     type="email"
-                    id="email"
+                    id="login-email"
                     name="email"
                     placeholder="E-mail"
-                    autocomplete="email"
-                    required
+                    required autocomplete="email"
                 >
             </div>
 
@@ -476,11 +475,10 @@
                 <label for="senha" class="visually-hidden">Senha</label>
                 <input
                     type="password"
-                    id="senha"
+                    id="login-senha"
                     name="senha"
                     placeholder="Senha"
-                    autocomplete="current-password"
-                    required
+                    required autocomplete="current-password"
                 >
             </div>
 
@@ -494,17 +492,7 @@
         </p>
     </main>
 </div>
-    <script>
-        // Esse script é da animação do botao do login junto do css -->
-        const formulario = document.querySelector("#form-login");
-        const botao = document.querySelector("#entrar-btn");
 
-        formulario.addEventListener("submit", () => {
-            botao.disabled = true;
-            botao.textContent = "Entrando...";
-        
-        });
-    </script>
 
         <!-- cadastro -->
 <div id="pagina-cadastro" class="page-view" data-view="cadastro" aria-label="Cadastro">
@@ -701,6 +689,8 @@
     mostrarPagina(location.hash.slice(1));
 </script>
 
+<script src="../../js/site/validacoes.js"></script>
 <script src="../../js/site/cadastro.js"></script>
+<script src="../../js/site/login.js"></script>
 </body>
 </html>
