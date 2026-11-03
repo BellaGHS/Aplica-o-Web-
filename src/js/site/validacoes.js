@@ -19,7 +19,10 @@
     return s.length >= 8 && /[a-z]/.test(s) && /[A-Z]/.test(s) && /\d/.test(s) && /[^A-Za-z0-9]/.test(s);
   }
 
-  const api = { cpfValido, cnpjValido, senhaForte };
+  function emailValido(valor) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(valor).trim());  }
+
+  const api = { cpfValido, cnpjValido, senhaForte, emailValido };
 
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.Validacoes = api;

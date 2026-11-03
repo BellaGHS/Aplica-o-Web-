@@ -1,15 +1,17 @@
 const form = document.getElementById('cadastro');
 
 if (form) {
-    const { cpfValido, cnpjValido, senhaForte } = Validacoes;
+    const { cpfValido, cnpjValido, senhaForte, emailValido  } = Validacoes;
 
     const $ = (id) => document.getElementById(id);
+    const email = $('cad-email');  
     const senha = $('cad-senha');
     const confirmar = $('cad-confirmar');
     const cpf = $('cad-cpf');
     const cnpj = $('cad-cnpj');
 
     function validar() {
+        email.setCustomValidity(emailValido(email.value) ? '' : 'E-mail inválido'); 
         cpf.setCustomValidity(cpfValido(cpf.value) ? '' : 'CPF inválido');
         cnpj.setCustomValidity(cnpjValido(cnpj.value) ? '' : 'CNPJ inválido');
         senha.setCustomValidity(
@@ -17,7 +19,7 @@ if (form) {
         confirmar.setCustomValidity(confirmar.value === senha.value ? '' : 'As senhas não coincidem');
     }
 
-    [cpf, cnpj, senha, confirmar].forEach((el) => el.addEventListener('input', validar));
+    [cpf, cnpj, senha, confirmar, email].forEach((el) => el.addEventListener('input', validar));
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
