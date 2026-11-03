@@ -1,0 +1,147 @@
+:root {
+    --azul-banner: #14487a;
+}
+
+.pagina-perfil .conteudo { background: var(--fundo); }
+
+.banner-perfil {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: var(--azul-banner);
+    color: #fff;
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+}
+
+.banner-perfil .avatar-grande {
+    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--azul-banner);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4.2rem;
+    overflow: hidden;
+}
+.banner-perfil .avatar-grande img { width: 100%; height: 100%; object-fit: cover; }
+
+.banner-perfil h1 {
+    margin: 0;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 600;
+}
+
+.banner-perfil .tipo {
+    display: inline-block;
+    background: #fff;
+    color: var(--azul-banner);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 12px;
+    border-radius: 12px;
+    margin: 2px 0 6px;
+}
+
+.banner-perfil p { margin: 0; font-size: 0.85rem; }
+.banner-perfil .tipo:empty { display: none; }  /* esconde a etiqueta enquanto estiver vazia */
+.banner-perfil h1:empty { min-height: 2.2rem; } /* segura a altura do banner sem o nome */
+
+
+.card-perfil {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px 22px 28px;
+    margin-bottom: 14px;
+}
+
+.card-perfil .cabecalho-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.card-perfil h2 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--azul-escuro);
+}
+.card-perfil h2 i { font-size: 1.3rem; }
+
+.btn-editar {
+    border: 0;
+    background: none;
+    color: #777;
+    font-size: 0.8rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+.btn-editar:hover { color: var(--azul-escuro); }
+
+.grade-campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 60px;
+    padding: 0 12px;
+}
+
+.grade-campos label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.85rem;
+    color: var(--azul-escuro);
+}
+
+.grade-campos input {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    color: #555;
+    background: #fff;
+    border: 1px solid #c9ced4;
+    border-radius: 8px;
+    outline: 0;
+}
+.grade-campos input:focus {
+    border-color: var(--azul-escuro);
+    box-shadow: 0 0 0 2px rgba(20, 72, 122, 0.15);
+}
+
+.grade-campos input[readonly] {
+    cursor: default;
+    background: #fff;
+}
+.grade-campos input[readonly]:focus {
+    border-color: #c9ced4;
+    box-shadow: none;
+}
+
+.texto-sobre {
+    margin: 0;
+    padding: 0 12px;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--azul-escuro);
+}
+.texto-sobre:empty { min-height: 70px; } /* segura a altura do card sem a descriçao */
+
+/* etiqueta de status colorida (opcional) */
+.banner-perfil .tipo.status-aberto      { background: #e3f6e6; color: #167a22; }
+.banner-perfil .tipo.status-andamento   { background: #fff3d6; color: #8a6100; }
+.banner-perfil .tipo.status-concluido   { background: #e4edf7; color: var(--azul-banner); }
+
+/* responsividade */
+@media (max-width: 768px) {
+    .grade-campos { grid-template-columns: 1fr; gap: 16px; }
+    .banner-perfil { flex-direction: column; text-align: center; }
+}

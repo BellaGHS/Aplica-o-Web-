@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pt-BR">
+ 
+<head>
+    <meta charset="UTF-8" />
+    <title>Amplia + | Cadastrar projeto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/src/css/hub_css/inicio-hub.css">
+    <link rel="stylesheet" href="/src/css/hub_css/editar-projeto.css?v=3">
+</head>
+ 
+<body class="pagina-editar-projeto">
+    <div class="layout">
+ 
+        <aside class="sidebar">
+            <img class="logo" src="/src/img/logo-amplia+.png" alt="Amplia +" />
+ 
+            <nav>
+                <a href="../../maquinas/inicio-hub/"><i class="bi bi-house-door-fill"></i> Início</a>
+                <a href="../../maquinas/conexoes-maquina/"><i class="bi bi-globe2"></i> Conexões</a>
+                <a href="../meus-projetos/"><i class="bi bi-clipboard2-check-fill"></i> Meus projetos</a>
+                <a href="../../maquinas/menssagens/"><i class="bi bi-chat-left-text-fill"></i> Mensagem</a>
+            </nav>
+ 
+            <div class="rodape-menu">
+                <a href="../../maquinas/configuracoes/"><i class="bi bi-gear-fill"></i> Configurações</a>
+                <a href="/src/html/site/"><i class="bi bi-box-arrow-left"></i> Sair</a>
+            </div>
+        </aside>
+ 
+        <main class="conteudo">
+ 
+            <div class="topbar">
+                <div class="topbar-acoes">
+                    <i class="bi bi-bell-fill" aria-label="Notificações"></i>
+                    <a href="../perfil-projeto/" aria-label="Meu perfil"><i class="bi bi-person-circle"></i></a>
+                </div>
+            </div>
+ 
+            <h1 class="titulo-pagina">Cadastrar projeto</h1>
+ 
+            <!-- só volta pra meus projetos -->
+            <form class="form-maquina" action="../meus-projetos/" method="get" enctype="multipart/form-data">
+ 
+                <div class="colunas-maquina">
+ 
+                    <!-- coluna esquerda -->
+                    <div class="coluna-maquina">
+                        <div class="grupo-campo">
+                            <label for="nome-projeto">Nome do projeto</label>
+                            <input type="text" id="nome-projeto" name="nome_projeto">
+                        </div>
+ 
+                        <div class="grupo-campo">
+                            <label for="quantidade">Quantidade de peças</label>
+                            <input type="text" id="quantidade" name="quantidade" inputmode="numeric">
+                        </div>
+ 
+                        <div class="grupo-campo">
+                            <span class="rotulo">Tipo de peça</span>
+                            <div class="opcoes-grade">
+                                <label><input type="checkbox" name="tipo_peca" value="protese"> Prótese</label>
+                                <label><input type="checkbox" name="tipo_peca" value="capacete"> Capacete</label>
+                                <label><input type="checkbox" name="tipo_peca" value="ortese"> Órtese</label>
+                                <label><input type="checkbox" name="tipo_peca" value="colete"> Colete</label>
+                                <label><input type="checkbox" name="tipo_peca" value="prototipo"> Protótipo</label>
+                                <div class="outro-tipo">
+                                    <label><input type="checkbox" name="tipo_peca" value="outro"> Outro</label>
+                                    <input type="text" class="campo-outro" name="tipo_peca_outro" aria-label="Outro tipo de peça">
+                                </div>
+                                <label><input type="checkbox" name="tipo_peca" value="reposicao"> Peça de reposição</label>
+                            </div>
+                        </div>
+ 
+                        <div class="grupo-campo">
+                            <span class="rotulo">Materiais disponíveis</span>
+                            <div class="opcoes-linha materiais">
+                                <label><input type="checkbox" name="materiais" value="PLA"> PLA</label>
+                                <label><input type="checkbox" name="materiais" value="PETG"> PETG</label>
+                                <label><input type="checkbox" name="materiais" value="ABS"> ABS</label>
+                                <label><input type="checkbox" name="materiais" value="TPU"> TPU</label>
+                                <label><input type="checkbox" name="materiais" value="Resina fotossensível"> Resina Fotossensível</label>
+                            </div>
+                        </div>
+ 
+                        <div class="grupo-campo">
+                            <label for="descricao">Descrição</label>
+                            <textarea id="descricao" name="descricao"></textarea>
+                        </div>
+ 
+                        <div class="grupo-campo">
+                            <span class="rotulo">Arquivo do projeto</span>
+                            <small class="dica-imagem">Anexe o arquivo da peça</small>
+                            <label class="upload-arquivo" title="Escolher arquivo">
+                                <svg viewBox="0 0 80 80" aria-hidden="true">
+                                    <circle cx="40" cy="40" r="38" fill="#2f4953" />
+                                    <rect x="27" y="17" width="26" height="30" rx="2" fill="#f2f2f2" />
+                                    <rect x="31" y="22" width="18" height="2.4" fill="#c9c9c9" />
+                                    <rect x="31" y="28" width="18" height="2.4" fill="#c9c9c9" />
+                                    <path d="M16 36 h16 l4 5 h28 v21 a3 3 0 0 1 -3 3 H19 a3 3 0 0 1 -3 -3 Z" fill="#f4c25b" />
+                                    <path d="M16 46 h48 v16 a3 3 0 0 1 -3 3 H19 a3 3 0 0 1 -3 -3 Z" fill="#f8d27c" />
+                                </svg>
+                                <input type="file" name="arquivo" accept=".pdf,.doc,.docx,.odt">
+                            </label>
+                            <small class="formatos">Formatos aceitos:<br>PDF - DOC - DOCX - ODT</small>
+                        </div>
+                    </div>
+ 
+                    <!-- coluna direita -->
+                    <div class="coluna-maquina">
+                        <div class="grupo-campo">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" id="cidade" name="cidade">
+                        </div>
+ 
+                        <div class="grupo-campo">
+                            <label for="estado">Estado</label>
+                            <input type="text" id="estado" name="estado">
+                        </div>
+ 
+                        <div class="grupo-campo">
+                            <span class="rotulo">Disponibilidade</span>
+                            <div class="opcoes-linha">
+                                <label><input type="radio" name="disponibilidade" value="disponivel"> Disponível</label>
+                                <label><input type="radio" name="disponibilidade" value="indisponivel"> Indisponível</label>
+                            </div>
+                        </div>
+ 
+                        <div class="grupo-campo">
+                            <span class="rotulo">Dimensões</span>
+                            <div class="dimensoes">
+                                <span class="rotulo-dim">Comprimento</span>
+                                <span class="rotulo-dim">Largura</span>
+                                <span class="rotulo-dim">Altura</span>
+ 
+                                <span class="medida"><input type="number" class="linha-medida" name="comprimento" min="0" aria-label="Comprimento em mm"> mm</span>
+                                <span class="medida"><input type="number" class="linha-medida" name="largura" min="0" aria-label="Largura em mm"> mm</span>
+                                <span class="medida"><input type="number" class="linha-medida" name="altura" min="0" aria-label="Altura em mm"> mm</span>
+                            </div>
+                            <label class="check-simples pequeno">
+                                <input type="checkbox" name="sem_dimensoes" value="1"> Ainda não sei as dimensões
+                            </label>
+                        </div>
+ 
+                        <div class="grupo-campo">
+                            <span class="rotulo">Prazo</span>
+                            <div class="linha-prazo">
+                                <input type="date" class="campo-data" name="prazo" aria-label="Prazo">
+                                <label class="check-simples">
+                                    <input type="checkbox" name="sem_prazo" value="1"> Sem prazo
+                                </label>
+                            </div>
+                        </div>
+ 
+                        <div class="grupo-campo">
+                            <div class="opcoes-urgencia">
+                                <label class="urgente"><input type="radio" name="urgencia" value="urgente"> Urgente</label>
+                                <label class="normal"><input type="radio" name="urgencia" value="normal"> Normal</label>
+                                <label class="sem-urgencia"><input type="radio" name="urgencia" value="sem_urgencia"> Sem urgência</label>
+                            </div>
+                        </div>
+                    </div>
+ 
+                </div>
+ 
+                <div class="acoes-maquina-form">
+                    <button type="submit" class="btn-enviar-maquina">Adicionar</button>
+                </div>
+            </form>
+ 
+        </main>
+    </div>
+</body>
+ 
+</html>
+ 

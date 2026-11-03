@@ -4,8 +4,8 @@ img { max-width: 100%; }
 
 #texto-principal { width: 100%; }
 
-#texto-principal h1 { font-size: clamp(2.1rem, 5.1vw, 80px); }
-#descricao        { font-size: clamp(1rem, 2.1vw, 30px); }
+#texto-principal h1 { font-size: clamp(3.2rem, 3.2vw, 80px); }
+#descricao        { font-size: clamp(1.5rem, 1.5vw, 30px); }
 .textos-intro h1  { font-size: clamp(2.4rem, 10.5vw, 170px); }
 
 #pagina-sobre .textos-intro h1 { font-size: clamp(2.2rem, 8vw, 120px); }

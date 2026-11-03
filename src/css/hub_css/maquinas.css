@@ -25,10 +25,14 @@
     text-decoration: none;
     font-size: 0.95rem;
     padding: 6px 42px;
+    border: 0;
     border-radius: 20px;
+    font-family: inherit;
     white-space: nowrap;
+    cursor: pointer;
 }
-.btn-adicionar:hover { color: #fff; opacity: 0.9; }
+.btn-adicionar:hover:not(:disabled) { color: #fff; opacity: 0.9; }
+.btn-adicionar:disabled { cursor: not-allowed; opacity: 0.65; }
  
 /* ---------- Abas (filtro sem JavaScript) ---------- */
 /* os radios ficam escondidos; os <label> funcionam como abas */
@@ -168,7 +172,8 @@
     cursor: pointer;
 }
 .acoes-maquina a:hover,
-.acoes-maquina button:hover { opacity: 0.9; color: #fff; }
+.acoes-maquina button:hover:not(:disabled) { opacity: 0.9; color: #fff; }
+.acoes-maquina button:disabled { cursor: not-allowed; opacity: 0.65; }
  
 /* responsividade */
 @media (max-width: 768px) {
