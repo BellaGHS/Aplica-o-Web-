@@ -1,6 +1,6 @@
 const request = require('supertest');
-const app = require('../../../src/app');
-const usuarios = require('../../../src/shared/repositories/usuarios.repository');
+const app = require('../../src/app');
+const usuarios = require('../../src/shared/repositories/usuarios.repository');
 
 // Dados que passam em todas as validações
 const dadosValidos = () => ({
