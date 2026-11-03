@@ -1,0 +1,144 @@
+/* AMPLIA+ — estilos complementares. Layout, grid, navegação, formulários e botões usam Bootstrap 5. */
+:root { 
+    --azul-escuro: #14487a;
+    --azul-titulo: #1b4f8a;
+    --turquesa: #1ab5c0;
+    --fundo: #f4f5f7;
+}
+html { 
+    scroll-behavior: smooth; 
+}
+
+body { 
+    color: var(--azul-escuro); 
+    background: #fff; 
+    font-family: "Segoe UI", Arial, sans-serif 
+}
+
+.brand-logo { 
+    display:block; 
+    width:auto; 
+    max-width:165px; 
+    max-height:58px; 
+    object-fit:contain; 
+}
+
+.navbar .nav-link { 
+    font-weight:600; 
+    color:var(--azul-escuro); 
+}
+
+.navbar .nav-link.active, .navbar .nav-link:hover { 
+    color:var(--azul-titulo); 
+}
+
+.btn-primary { 
+    --bs-btn-bg:var(--azul-titulo); 
+    --bs-btn-border-color:var(--azul-titulo); 
+    --bs-btn-hover-bg:var(--azul-escuro); 
+    --bs-btn-hover-border-color:var(--azul-escuro); 
+}
+
+.page-view { 
+    min-height:60vh; 
+}
+
+.page-view[hidden] { 
+    display:none !important; 
+}
+
+
+
+/*home*/
+#pagina-home .secao-principal { 
+    min-height:390px; 
+    display:flex; 
+    align-items:center; 
+    padding:4rem max(1rem, calc((100% - 1140px)/2)); 
+    background:linear-gradient(120deg,var(--azul-escuro),var(--turquesa)); 
+}
+
+#pagina-home .caixa-principal { max-width:760px; }
+
+#pagina-home #texto-principal h1 { font-size:clamp(2.2rem,5vw,4rem); font-weight:800; line-height:1.12; color:var(--amplia-blue-dark); }
+
+#pagina-home #descricao { max-width:650px; font-size:1.15rem; margin:1.25rem 0; }
+
+#pagina-home #botao-amplia { border:0; border-radius:.6rem; padding:.9rem 1.5rem; background:var(--amplia-blue); color:#fff; font-weight:700; }
+
+#pagina-home .midpage, #pagina-sobre .intro { position:relative; overflow:hidden; padding:3.5rem max(1rem,calc((100% - 1140px)/2)); background:var(--amplia-soft); }
+
+.fundo_bolas { max-width:100%; height:auto; }
+
+#pagina-home .midpage .fundo_bolas, #pagina-sobre .intro .fundo_bolas { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.13; }
+
+.textos-intro { position:relative; z-index:1; max-width:900px; }
+
+
+
+/*sobre*/
+#pagina-sobre .fundo_gradiente { background:linear-gradient(120deg,#eaf7fb,#f6f9ff); }
+
+#pagina-sobre .titulo { max-width:1140px; margin:auto; padding:3rem 1rem; display:flex; gap:2rem; align-items:center; justify-content:space-between; }
+
+#pagina-sobre .titulo .textos { max-width:650px; }
+
+#pagina-sobre .titulo h1 { color:var(--amplia-blue); font-weight:800; }
+
+#pagina-sobre .imagem-inicio { width:min(38%,390px); height:auto; object-fit:contain; }
+
+#pagina-sobre .corpo-pilares { max-width:1000px; margin:auto; padding:2rem 1rem; }
+
+#pagina-sobre .cima, #pagina-sobre .baixo { display:flex; align-items:center; justify-content:space-between; gap:2rem; padding:1.5rem 0; }
+
+#pagina-sobre .cima > div, #pagina-sobre .baixo > div { flex:1; }
+
+#pagina-sobre .corpo-pilares img { max-width:35%; max-height:250px; object-fit:contain; }
+
+
+/*login*/
+#pagina-login .card-login, #pagina-cadastro .fundo_branco { width:min(100% - 2rem,560px); margin:3rem auto; padding:clamp(1.5rem,4vw,2.5rem); background:#fff; border:1px solid #e1eaf2; border-radius:1rem; box-shadow:0 1rem 3rem #173c5a12; }
+
+#pagina-login .card-login h1, #pagina-cadastro h1 { color:var(--amplia-blue); font-weight:800; margin-bottom:1.5rem; }
+
+#pagina-login .campo, #pagina-cadastro .input-grupo { margin-bottom:1rem; }
+
+#pagina-login input, #pagina-cadastro input, #pagina-cadastro select { width:100%; }
+
+
+/*cadastro*/
+#pagina-cadastro .fundo { padding:1rem 0 2rem; background:linear-gradient(180deg,#f2f8fc,#fff); }
+
+#pagina-cadastro h2 { font-size:1.2rem; font-weight:700; margin:1.5rem 0 1rem; }
+
+#pagina-cadastro label { display:block; margin-bottom:.35rem; font-weight:600; }
+
+#pagina-cadastro .input-linha { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+
+#pagina-cadastro .termos label { display:flex; align-items:flex-start; gap:.5rem; font-weight:400; }
+
+#pagina-cadastro .termos input { width:auto; margin-top:.35rem; }
+
+
+/*termos*/
+#pagina-termos .secao-principal, #pagina-privacidade .secao-principal { background:var(--amplia-soft); padding:2rem 1rem; }
+
+#pagina-termos .caixa-principal, #pagina-privacidade .caixa-principal { max-width:960px; margin:auto; padding:clamp(1.25rem,4vw,3rem); background:white; border-radius:1rem; box-shadow:0 .5rem 2rem #173c5a0c; }
+
+#pagina-termos .titulo h1, #pagina-privacidade .titulo h1 { color:var(--amplia-blue); font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; }
+
+#pagina-termos .termos, #pagina-privacidade .termos { line-height:1.75; }
+
+#pagina-termos h4, #pagina-privacidade h4 { margin-top:1.5rem; color:var(--amplia-blue); font-weight:750; font-size:1.05rem; }
+
+
+/*footer*/
+.site-footer { color:#fff; background:var(--amplia-blue-dark); }
+
+.site-footer a { color:#fff; text-decoration:none; }
+
+.site-footer a:hover { text-decoration:underline; }
+
+.site-footer .brand-logo { filter:brightness(0) invert(1); }
+
+@media (max-width:767.98px) { #pagina-sobre .titulo, #pagina-sobre .cima, #pagina-sobre .baixo { flex-direction:column; align-items:flex-start; } #pagina-sobre .imagem-inicio, #pagina-sobre .corpo-pilares img { width:100%; max-width:320px; align-self:center; } #pagina-cadastro .input-linha { grid-template-columns:1fr; } #pagina-home .secao-principal { min-height:340px; padding:3rem 1.25rem; } }
