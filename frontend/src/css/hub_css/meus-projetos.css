@@ -116,10 +116,19 @@ button {
 
 .topbar {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    margin-bottom: 14px;
-    min-height: 60px;
+    justify-content: space-between;
+    gap: 16px;
+
+    height: 60px;
+    width: calc(100% + 56px);
+
+    margin: -16px -28px 8px;
+    padding: 0 28px;
+
+    background-color: #fff;
+    position: relative;
+    z-index: 10;
 }
 
 .topbar-spacer {

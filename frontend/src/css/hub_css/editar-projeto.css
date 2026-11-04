@@ -297,7 +297,6 @@
     .pagina-editar-projeto .colunas-maquina { grid-template-columns: 1fr; gap: 1.35em; width: 100%; margin-left: 0; }
     .pagina-editar-projeto .btn-enviar-maquina { width: 100%; }
 }
-=======
 .pagina-editar-projeto {
     --ep-azul: #14487a;
     --ep-titulo: #1b4f8a;

@@ -58,7 +58,7 @@ async function cadastrar(dados = {}){
     senhaHash,
     cnpj,
     razaoSocial: dados.razaoSocial.trim(),
-    fornece: dados.fornece,
+    fornece: dados.fornece
   });
 
   // 6. DEVOLVER só o que é seguro mostrar (sem CPF, sem hash)
