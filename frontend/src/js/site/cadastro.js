@@ -40,6 +40,7 @@ if (form) {
         cnpj: cnpj.value.replace(/[.\/-]/g, ''),
         razaoSocial: $('cad-razao').value.trim(),
         fornece: $('fornecer').value,
+        termos: $('termos').checked,
     };
 
     try {

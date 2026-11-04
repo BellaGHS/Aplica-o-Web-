@@ -12,7 +12,26 @@
   }
 
   function cnpjValido(valor) {
-    return /^[A-Z0-9]{12}\d{2}$/.test(String(valor).replace(/[.\/-]/g, '').toUpperCase());
+      let cnpj = String(valor).replace(/[.\/-]/g, '').toUpperCase();
+      if (!/^[A-Z0-9]{12}\d{2}$/.test(cnpj)) return false;
+      if (/^(\d)\1{13}$/.test(cnpj)) return false;
+
+      let b = [5,4,3,2,9,8,7,6,5,4,3,2];
+      let n = 0;
+
+      for (let i = 0; i < 12; i++) {
+          n += (cnpj.charCodeAt(i) - 48) * b[i];
+      }
+
+      let digito1 = n % 11 < 2 ? 0 : 11 - (n % 11);
+      b = [6,5,4,3,2,9,8,7,6,5,4,3,2];
+      n = 0;
+      for (let i = 0; i < 13; i++) {
+          let caractere = i === 12 ? digito1 : cnpj.charCodeAt(i) - 48;
+          n += caractere * b[i];
+      }
+      let digito2 = n % 11 < 2 ? 0 : 11 - (n % 11);
+      return cnpj.endsWith(`${digito1}${digito2}`);
   }
 
   function senhaForte(s) {

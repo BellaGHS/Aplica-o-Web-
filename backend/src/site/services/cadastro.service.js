@@ -2,7 +2,7 @@
 const bcrypt = require('bcryptjs');
 
 //reaproveitamos as mesmas funcoes de validação do front(arquivo validacoes.js)
-const {cpfValido, cnpjValido, senhaForte, emailValido} = require('../../../../src/js/site/validacoes');
+const {cpfValido, cnpjValido, senhaForte, emailValido} = require('../../../../frontend/src/js/site/validacoes');
 
 //o repositorio é quem guarda e procura usuarios
 const usuarios = require('../../shared/repositories/usuarios.repository');
@@ -26,11 +26,12 @@ async function cadastrar(dados = {}){
   if (!cpfValido(dados.cpf ?? '')) throw erro(400, 'CPF inválido');
   if (!textoPreenchido(dados.telefone)) throw erro(400, 'Telefone obrigatório');
   if (!emailValido(dados.email ?? '')) throw erro(400, 'E-mail inválido');
-  if (typeof dados.senha !== 'string' || !senhaForte(dados.senha)) {
-    throw erro(400, 'Senha fraca: use 8+ caracteres com maiúscula, minúscula, número e símbolo');
-  }
+  if (typeof dados.senha !== 'string' || !senhaForte(dados.senha)) throw erro(400, 'Senha fraca: use 8+ caracteres com maiúscula, minúscula, número e símbolo');
   if (!cnpjValido(dados.cnpj ?? '')) throw erro(400, 'CNPJ inválido');
   if (!textoPreenchido(dados.razaoSocial ?? '')) throw erro(400, 'Razão social obrigatória');
+  if (dados.termos !== true) {
+    throw erro(400, 'É necessário aceitar os termos de uso');
+}
   if (!['maquina', 'projeto'].includes(dados.fornece)) throw erro(400, 'Tipo de fornecimento inválido');
 
     // 2. LIMPAR: deixa os dados num formato único antes de guardar
@@ -41,6 +42,8 @@ async function cadastrar(dados = {}){
     // 3. CONFERIR REPETIDOS: 409 significa "conflito" (já existe)
     if (usuarios.buscarPorEmail(email)) throw erro(409, 'E-mail já cadastrado');
     if (usuarios.buscarPorCpf(cpf)) throw erro(409, 'CPF já cadastrado');
+    if (usuarios.buscarPorCnpj(cnpj)) throw erro(409, 'CNPJ já cadastrado');
+  
 
     // 4. HASH DA SENHA: nunca guardamos a senha de verdade.
   // O 10 é o "custo": quanto maior, mais lento (e mais seguro) de gerar.

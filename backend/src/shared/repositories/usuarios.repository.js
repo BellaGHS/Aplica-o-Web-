@@ -21,10 +21,14 @@ function buscarPorCpf(cpf) {
     return usuarios.find((u) => u.cpf === cpf);
 }
 
+function buscarPorCnpj(cnpj) {
+    return usuarios.find((u) => u.cnpj === cnpj);
+}
+
 // Esvazia a lista. É usada nos testes, para cada teste começar do zero
 function limpar() {
-    usuarios.lenght = 0;
+    usuarios.length = 0;
     proximoId = 1;
 }
 
-module.exports = {salvar, buscarPorEmail, buscarPorCpf, limpar};
+module.exports = {salvar, buscarPorEmail, buscarPorCpf, buscarPorCnpj, limpar};
