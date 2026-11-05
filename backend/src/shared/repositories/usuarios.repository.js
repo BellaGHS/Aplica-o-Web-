@@ -25,6 +25,10 @@ function buscarPorCnpj(cnpj) {
     return usuarios.find((u) => u.cnpj === cnpj);
 }
 
+function buscarPorSenha(senha) {
+    return usuarios.find((u) => u.senha === senha);
+}
+
 // Esvazia a lista. É usada nos testes, para cada teste começar do zero
 function limpar() {
     usuarios.length = 0;
