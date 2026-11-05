@@ -393,7 +393,7 @@ body {
     background: #fff;
     border-radius: 36px;
     padding: 28px 44px 36px;
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+    /*box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);*/
     text-align: center;
     margin-left: 30%;
     margin-right: 20%;

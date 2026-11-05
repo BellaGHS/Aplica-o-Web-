@@ -31,16 +31,16 @@
 .grupo-campo .rotulo {
     display: block;
     margin-bottom: 4px;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: var(--em-azul);
 }
- 
+
 .grupo-campo input[type="text"],
 .grupo-campo textarea {
     width: 100%;
     padding: 8px 12px;
     font-family: inherit;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #555;
     background: #fff;
     border: 1px solid var(--em-borda);
@@ -72,7 +72,7 @@
     align-items: center;
     gap: 5px;
     margin: 0;
-    font-size: 0.8rem;
+    font-size: 1rem;
     cursor: pointer;
 }
  
@@ -81,7 +81,8 @@
 .opcoes-linha.materiais { padding-left: 4px; gap: 8px 14px; }
  
 .opcoes-linha.materiais label {
-    font-size: 0.65rem;
+    font-size: 0.85rem;
+    margin-top: 4px;
     color: var(--em-azul);
 }
  
@@ -93,8 +94,8 @@
 
 .dica-imagem {
     display: block;
-    margin: -2px 0 2px 12px;
-    font-size: 0.5rem;
+    margin: -4px 0 2px 12px;
+    font-size: 0.8rem;
     color: #888;
 }
  
