@@ -32,7 +32,8 @@ async function login(dados = {}) {
     return {
         id: usuario.id,
         nome: usuario.nome,
-        email: usuario.email
+        email: usuario.email,
+        fornece: usuario.fornece
     };
 }
 

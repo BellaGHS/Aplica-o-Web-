@@ -39,6 +39,8 @@ if (formLogin) {
         if (!res.ok){
             throw new Error(resposta.mensagem ||'Erro ao entrar');
         }
+        sessionStorage.setItem('usuario', JSON.stringify(resposta.usuario));
+
         location.href = '../hub_digital/maquinas/inicio-hub/index.html';
     } catch (err) {
         alert(err.message);

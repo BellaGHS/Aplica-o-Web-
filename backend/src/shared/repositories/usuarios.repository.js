@@ -29,10 +29,20 @@ function buscarPorSenha(senha) {
     return usuarios.find((u) => u.senha === senha);
 }
 
-// Esvazia a lista. É usada nos testes, para cada teste começar do zero
+function buscarPorId(id) {
+    return usuarios.find((u) => u.id === id);
+}
+
 function limpar() {
     usuarios.length = 0;
     proximoId = 1;
 }
+function atualizar(id, campos){
+    const usuario = buscarPorId(id);
+    if (!usuario) return undefined;
+    Object.assign(usuario, campos);
+    return usuario;
+}
 
-module.exports = {salvar, buscarPorEmail, buscarPorCpf, buscarPorCnpj, limpar};
+
+module.exports = {salvar, buscarPorEmail, buscarPorCpf, buscarPorCnpj, buscarPorId, limpar, atualizar};
