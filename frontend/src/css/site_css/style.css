@@ -412,12 +412,12 @@ body {
 .campo input {
     width: 100%;
     padding: 8px 10px;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     border: 1px solid #555;
     border-radius: 6px;
     outline: 0;
 }
-.campo input::placeholder { color: #777; font-size: 0.7rem; }
+.campo input::placeholder { color: #777; font-size: 0.9rem; }
 .campo input:focus { border-color: #555; box-shadow: none; outline: none; }
 
 .btn-entrar {

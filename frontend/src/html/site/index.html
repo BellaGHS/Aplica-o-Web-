@@ -507,35 +507,35 @@
                     <div class="dados">
                         <div class="dados">
                             <div class="input-grupo">
-                                <label for="cad-nome">Nome completo</label>
+                                <label for="cad-nome">Nome completo<span class="text-danger">*</span></label>
                                 <input id="cad-nome" name="nome" type="text" required minlength="3" autocomplete="name">
                             </div>
 
                             <div class="input-linha">
                                 <div class="input-grupo">
-                                    <label for="cad-cpf">CPF</label>
-                                    <input id="cad-cpf" name="cpf" type="text" required inputmode="numeric" placeholder="000.000.00-00">
+                                    <label for="cad-cpf">CPF<span class="text-danger">*</span></label>
+                                    <input id="cad-cpf" name="cpf" type="text" maxlength="11" required inputmode="numeric" placeholder="000.000.00-00">
                                 </div>
 
                                 <div class="input-grupo">
-                                    <label for="cad-telefone">Telefone</label>
-                                    <input id="cad-telefone" name="telefone" type="tel" required autocomplete="tel">
+                                    <label for="cad-telefone">Telefone<span class="text-danger">*</span></label>
+                                    <input id="cad-telefone" name="telefone" type="tel" maxlength="11" required autocomplete="tel">
                                 </div>
                             </div>
 
                             <div class="input-grupo">
-                                <label for="cad-email">E-mail</label>
+                                <label for="cad-email">E-mail<span class="text-danger">*</span></label>
                                 <input id="cad-email" name="email" type="email" required autocomplete="email">
                             </div>
 
                             <div class="input-linha">
                                 <div class="input-grupo">
-                                    <label for="cad-senha">Senha</label>
+                                    <label for="cad-senha">Senha<span class="text-danger">*</span></label>
                                     <input id="cad-senha" name="senha" type="password" required minlength="8" autocomplete="new-password">
                                 </div>
 
                                 <div class="input-grupo">
-                                    <label for="cad-confirmar">Confirmar a senha</label>
+                                    <label for="cad-confirmar">Confirmar a senha<span class="text-danger">*</span></label>
                                     <input id="cad-confirmar" name="confirmar" type="password" required autocomplete="new-password">
                                 </div>
                             </div>
@@ -550,8 +550,8 @@
                     <h2>Dados da Instituição</h2>
                     <div class="dados">
                         <div class="input-grupo">
-                            <label for="cad-cnpj">cnpj</label>
-                            <input id="cad-cnpj" name="cnpj" type="text" required>
+                            <label for="cad-cnpj">cnpj<span class="text-danger">*</span></label>
+                            <input id="cad-cnpj" name="cnpj" type="text" maxlength="14" required>
                         </div>
                         <div class="input-grupo">
                             <label for="cad-razao">razao social da Instituição</label>
@@ -569,7 +569,7 @@
 
                             <label for="termos">
                                 Ao clicar você concorda com os nossos
-                                <a href="../termo/">termos de uso</a>
+                                <a href="#termos">termos de uso</a>
                             </label>
                         </div>
 
