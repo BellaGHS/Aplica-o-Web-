@@ -1,4 +1,5 @@
 const service = require('../services/login.service');
+const { gerarToken } = require('../../shared/auth/token');
 
 async function login(req, res) {
     try {
@@ -6,7 +7,8 @@ async function login(req, res) {
 
         return res.status(200).json({
             mensagem: 'Login realizado com sucesso',
-            usuario
+            usuario,
+            token: gerarToken(usuario.id)
         });
 
     } catch (err) {

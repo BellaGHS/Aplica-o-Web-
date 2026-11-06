@@ -16,4 +16,7 @@ app.use('/frontend/src', express.static(pastaFront));
 app.use(express.static(pastaFront));
 app.get('/', (req, res) => res.redirect('/html/site/index.html'));
 
+const perfilRoutes = require('./hub/routes/perfil.routes');
+app.use('/api', perfilRoutes);
+
 module.exports = app;
