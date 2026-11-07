@@ -22,3 +22,7 @@ ja ta com descrição materiais nescessarios, urgência e etc.
 tem uma impressora exemplo também
 nome: Impressora Exemplo
 tem marca, material e etc
+
+
+O banco ja está com as constraints, ou seja, deixa os dados de cadastros com regras, entao o cpf é unico, email tambem, e etc. pra ver as constraints é so rodar essa query:
+SHOW CONSTRAINTS;
