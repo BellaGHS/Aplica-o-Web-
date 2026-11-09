@@ -1,4 +1,4 @@
-  const { cpfValido, cnpjValido, senhaForte, emailValido } = require('../src/js/site/validacoes');
+  const { cpfValido, cnpjValido, senhaForte, emailValido } = require('frontend/src/js/site/validacoes');
 
   describe('cpfValido', () => {
     test('aceita CPF válido, com ou sem máscara', () => {
