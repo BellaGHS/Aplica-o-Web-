@@ -2,8 +2,7 @@
 const bcrypt = require('bcryptjs');
 
 //reaproveitamos as mesmas funcoes de validação do front(arquivo validacoes.js)
-const {cpfValido, cnpjValido, senhaForte, emailValido} = require('../../../../src/js/site/validacoes');
-
+const {cpfValido, cnpjValido, senhaForte, emailValido} = require('../../../../../frontend/src/js/site/validacoes');
 //o repositorio é quem guarda e procura usuarios
 const usuarios = require('../../shared/repositories/usuarios.repository');
 
