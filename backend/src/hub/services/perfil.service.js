@@ -15,16 +15,18 @@ function montarPerfil(usuario) {
 
     return {
         id: usuario.id,
-        nome: usuario.id,
-        email: usuario.id,
-        telefone: usuario.id ?? '',
-        localizacao: usuario.id ?? '',
-        sobre: usuario.id ?? '',
-        razaoSocial: usuario.id ?? '',
+        nome: usuario.nome || '',
+        email: usuario.email || '',
+        telefone: usuario.telefone || '',
+        localizacao: usuario.localizacao || '',
+        sobre: usuario.sobre || '',
+        razaoSocial: usuario.razaoSocial || '',
+        nomeExibicao: usuario.nomeExibicao || '',
+        fotoPerfil: usuario.fotoPerfil || '',
         fornece: tipo.fornece,
 
         banner: {
-            titulo: usuario.razaoSocial || usuario.nome,
+            titulo: usuario.nomeExibicao || usuario.nome,
             etiqueta: tipo.etiqueta,
             subtitulo: usuario.localizacao || '',
         },
@@ -47,7 +49,7 @@ function obter(usuarioId) {
     return montarPerfil(usuario);
 }
 
-function atualizar(usuarioId, dados) {
+function atualizar(usuarioId, dados, arquivo) {
     const usuario = usuarios.buscarPorId(usuarioId);
     if (!usuario) throw erro(404, 'Usuário não encontrado');
 
@@ -65,7 +67,7 @@ function atualizar(usuarioId, dados) {
     if (dados.email !== undefined) {
         if (!emailValido(dados.email ?? '')) throw erro(400, 'E-mail inválido');
         const email = dados.email.trim().toLowerCase();
-        const dono = usuario.buscarPorEmail(email);
+        const dono = usuarios.buscarPorEmail(email);
         if (dono && dono.id !== usuarioId) throw erro(400, 'E-mail cadastrado');
         campos.email = email;
     }
@@ -76,7 +78,7 @@ function atualizar(usuarioId, dados) {
     }
 
     if (dados.localizacao !== undefined) {
-        if (typeof daods.localizacao !== 'string' || dados.localizacao.length > 120) {
+        if (typeof dados.localizacao !== 'string' || dados.localizacao.length > 120) {
             throw erro(400, 'Localização inválida (máximo de 120 caracteres)');
         }
         campos.localizacao = dados.localizacao.trim();
@@ -89,7 +91,16 @@ function atualizar(usuarioId, dados) {
         campos.sobre = dados.sobre.trim();
     }
 
-    if (Object.keys(Campos). length === 0) throw erro(400, 'Nenhum campo para atualizar');
+    if (dados.nomeExibicao !== undefined) {
+        if (!textoPreenchido(dados.nomeExibicao, 2)) throw erro(400, 'Nome de exibição inválido');
+        campos.nomeExibicao = dados.nomeExibicao.trim();
+    }
+
+    if (arquivo) {
+        campos.fotoPerfil = `/uploads/perfis/${arquivo.filename}`;
+    }
+
+    if (Object.keys(campos).length === 0) throw erro(400, 'Nenhum campo para atualizar');
     return montarPerfil(usuarios.atualizar(usuarioId, campos));
 }
 

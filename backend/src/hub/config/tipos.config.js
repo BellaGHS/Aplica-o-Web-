@@ -10,14 +10,16 @@ const paginasComuns = {
     editarPerfil: `${PASTA_HUB}/maquinas/editar-perfil`,
 };
 
-function montarMenus(paginas, menuItend) {
+
+function montarMenu(paginas, meusItens) {
     return [
-        {chave: 'inicio', rotulo: 'Início', icone: 'bi-house-door-fill', href: paginas.inicio},
-        {chave: 'conexoes', rotulo: 'Conexões', icone: 'bi-gloce2', href: paginas.conexoes},
-        {chave: 'meusItens', rotulo: meusItens.rotulo, icone: 'meusItens.icone', href: paginas.meusItens},
-        {chave: 'mensagens', rotulo: 'Mensagem', icone: 'bi-chat-left-text-fill', href: paginas.mensagens},
+        { chave: 'inicio', rotulo: 'Início', icone: 'bi-house-door-fill', href: paginas.inicio },
+        { chave: 'conexoes', rotulo: 'Conexões', icone: 'bi-globe2', href: paginas.conexoes },
+        { chave: 'meusItens', rotulo: meusItens.rotulo, icone: meusItens.icone, href: paginas.meusItens },
+        { chave: 'mensagens', rotulo: 'Mensagem', icone: 'bi-chat-left-text-fill', href: paginas.mensagens },
     ];
 }
+
 
 const maquina = {
     fornece: 'maquina',

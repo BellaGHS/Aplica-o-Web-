@@ -15,7 +15,7 @@ function obter(req, res) {
 }
 function atualizar(req, res) {
     try {
-        const perfil = service.atualizar(req.usuarioId, req.body);
+        const perfil = service.atualizar(req.usuarioId, req.body, req.file);
         res.status(200).json({ mensagem: 'Perfil atualizado com sucesso', perfil });
     } catch (err) {
         responderErro(err, res);

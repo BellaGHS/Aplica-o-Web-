@@ -40,6 +40,7 @@ if (formLogin) {
             throw new Error(resposta.mensagem ||'Erro ao entrar');
         }
         sessionStorage.setItem('usuario', JSON.stringify(resposta.usuario));
+        sessionStorage.setItem('token', resposta.token);
 
         location.href = '../hub_digital/maquinas/inicio-hub/index.html';
     } catch (err) {

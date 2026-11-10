@@ -19,4 +19,7 @@ app.get('/', (req, res) => res.redirect('/html/site/index.html'));
 const perfilRoutes = require('./hub/routes/perfil.routes');
 app.use('/api', perfilRoutes);
 
+const pastaUploads = path.join(__dirname, '../../uploads');
+app.use('/uploads', express.static(pastaUploads));
+
 module.exports = app;
