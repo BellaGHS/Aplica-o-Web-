@@ -540,84 +540,46 @@
       <a href="#home" class="botao-voltar">
         <i class="bi bi-arrow-left"></i>
         Voltar para o início
-    </a>
-                <div class="fundo_branco">
-                <h1>Crie sua conta</h1>
-                <h2>Dados pessoais</h2>
-                <form id="cadastro" novalidate>
-                    <div class="dados">
-                        <div class="dados">
-                            <div class="input-grupo">
-                                <label for="cad-nome">Nome completo<span class="text-danger">*</span></label>
-                                <input id="cad-nome" name="nome" type="text" required minlength="3" autocomplete="name">
-                            </div>
+      </a>
+      <div class="fundo_branco">
+        <h1>Crie sua conta</h1>
+        <h2>Dados pessoais</h2>
+        <form id="cadastro" novalidate>
+          <div class="dados">
+            <div class="dados">
+              <div class="input-grupo">
+                <label for="cad-nome">Nome completo</label>
+                <input id="cad-nome" name="nome" type="text" required minlength="3" autocomplete="name">
+              </div>
 
-                            <div class="input-linha">
-                                <div class="input-grupo">
-                                    <label for="cad-cpf">CPF<span class="text-danger">*</span></label>
-                                    <input id="cad-cpf" name="cpf" type="text" maxlength="11" required inputmode="numeric" placeholder="000.000.00-00">
-                                </div>
+              <div class="input-linha">
+                <div class="input-grupo">
+                  <label for="cad-cpf">CPF</label>
+                  <input id="cad-cpf" name="cpf" type="text" required inputmode="numeric" placeholder="000.000.00-00">
+                </div>
 
-                                <div class="input-grupo">
-                                    <label for="cad-telefone">Telefone<span class="text-danger">*</span></label>
-                                    <input id="cad-telefone" name="telefone" type="tel" maxlength="11" required autocomplete="tel">
-                                </div>
-                            </div>
+                <div class="input-grupo">
+                  <label for="cad-telefone">Telefone</label>
+                  <input id="cad-telefone" name="telefone" type="tel" required autocomplete="tel">
+                </div>
+              </div>
 
-                            <div class="input-grupo">
-                                <label for="cad-email">E-mail<span class="text-danger">*</span></label>
-                                <input id="cad-email" name="email" type="email" required autocomplete="email">
-                            </div>
+              <div class="input-grupo">
+                <label for="cad-email">E-mail</label>
+                <input id="cad-email" name="email" type="email" required autocomplete="email">
+              </div>
 
-                            <div class="input-linha">
-                                <div class="input-grupo">
-                                    <label for="cad-senha">Senha<span class="text-danger">*</span></label>
-                                    <input id="cad-senha" name="senha" type="password" required minlength="8" autocomplete="new-password">
-                                </div>
+              <div class="input-linha">
+                <div class="input-grupo">
+                  <label for="cad-senha">Senha</label>
+                  <input id="cad-senha" name="senha" type="password" required minlength="8" autocomplete="new-password">
+                </div>
 
-                                <div class="input-grupo">
-                                    <label for="cad-confirmar">Confirmar a senha<span class="text-danger">*</span></label>
-                                    <input id="cad-confirmar" name="confirmar" type="password" required autocomplete="new-password">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- avisos sobre senha -->
-                        <p>Para a sua segurança, sua senha deverá possuir no mínimo 8 caracteres, sendo:
-                        </p>
-                        <p>* Letras maíusculas e minúsculas</p>
-                        <p>* Números</p>
-                        <p>* Caracteres especiais</p>
-                    </div>
-                    <h2>Dados da Instituição</h2>
-                    <div class="dados">
-                        <div class="input-grupo">
-                            <label for="cad-cnpj">cnpj<span class="text-danger">*</span></label>
-                            <input id="cad-cnpj" name="cnpj" type="text" maxlength="18" required>
-                        </div>
-                        <div class="input-grupo">
-                            <label for="cad-razao">razao social da Instituição</label>
-                            <input id="cad-razao" name="razao" type="text" required>
-                        </div>
-                        <div class="projeto-maquina">
-                            <h3>Selecione a opção corresponde com o que será fornecido:</h3>
-                            <select id="fornecer" required>
-                                <option value="maquina">Máquinas</option>
-                                <option value="projeto">Projetos</option>
-                            </select>
-                        </div>
-                        <div class="termos d-flex justify-content-center align-items-start gap-2">
-                            <input type="checkbox" id="termos" name="termos" required>
-
-                            <label for="termos">
-                                Ao clicar você concorda com os nossos
-                                <a href="#termos">termos de uso</a>
-                            </label>
-                        </div>
-
-                        <button id="criar-btn" type="submit">Criar</button>
-                    </div>
-                </form>
-                <p class="final">Já possui conta? <a href="#login">Entre aqui</a></p>
+                <div class="input-grupo">
+                  <label for="cad-confirmar">Confirmar a senha</label>
+                  <input id="cad-confirmar" name="confirmar" type="password" required autocomplete="new-password">
+                </div>
+              </div>
             </div>
             <!-- avisos sobre senha -->
             <p>Para a sua segurança, sua senha deverá possuir no mínimo 8 caracteres, sendo:
