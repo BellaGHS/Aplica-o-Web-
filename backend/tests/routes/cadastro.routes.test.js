@@ -12,6 +12,7 @@ const dadosValidos = () => ({
   cnpj: '11222333000181',
   razaoSocial: 'Instituição Ana',
   fornece: 'maquina',
+  termos: true,
 });
 
 // Antes de cada teste, esvazia a lista de usuários
@@ -37,6 +38,12 @@ describe('POST /api/cadastro', () => {
     const res = await request(app).post('/api/cadastro').send({ ...dadosValidos(), cpf: '11111111111' });
     expect(res.status).toBe(400);
     expect(res.body.mensagem).toMatch(/CPF/);
+  });
+
+    test('CNPJ inválido retorna 400', async () => {
+    const res = await request(app).post('/api/cadastro').send({ ...dadosValidos(), cnpj: '11222333000111' });
+    expect(res.status).toBe(400);
+    expect(res.body.mensagem).toMatch(/CNPJ/);
   });
 
   test('senha fraca retorna 400', async () => {
@@ -71,5 +78,13 @@ describe('POST /api/cadastro', () => {
     await request(app).post('/api/cadastro').send(dadosValidos());
     const res = await request(app).post('/api/cadastro').send({ ...dadosValidos(), email: 'outra@email.com' });
     expect(res.status).toBe(409);
+    expect(res.body.mensagem).toMatch(/CPF/);
+  });
+
+  test('CNPJ repetido com outro e-mail retorna 409', async () => {
+    await request(app).post('/api/cadastro').send(dadosValidos());
+    const res = await request(app).post('/api/cadastro').send({ ...dadosValidos(), email: 'outra@email.com', cpf: '11144477735' });
+    expect(res.status).toBe(409);
+    expect(res.body.mensagem).toMatch(/CNPJ/);
   });
 });

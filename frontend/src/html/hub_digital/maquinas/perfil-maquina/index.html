@@ -27,7 +27,7 @@
 
             <div class="rodape-menu">
                 <a href="../configuracoes/"><i class="bi bi-gear-fill"></i> Configurações</a>
-                <a href="../../../site/"><i class="bi bi-box-arrow-left"></i> Sair</a>
+                <a href="../../../site/index.html"><i class="bi bi-box-arrow-left"></i> Sair</a>
             </div>
         </aside>
 
@@ -41,11 +41,12 @@
             </div>
 
             <section class="banner-perfil">
-                <div class="avatar-grande"><i class="bi bi-person-fill"></i></div>
+                <div class="avatar-grande">
+                    <img id="foto-perfil" src="" alt="Foto de perfil" hidden>
+                    <i class="bi bi-person-fill" id="icone-foto"></i>
+                </div>
                 <div>
-                    <h1>
-                        IMT - Instituto Mauá de Tecnologia
-                    </h1>
+                    <h1></h1>
                     <span class="tipo"></span>
                     <p></p>
                 </div>
@@ -84,15 +85,13 @@
                 <div class="cabecalho-card">
                     <h2><i class="bi bi-journal-text"></i> Sobre mim</h2>
                 </div>
-                <p class="texto-sobre">
-                    
+                <p class="texto-sobre" type="texto-sobre" id="texto-sobre" name="texto-sobre" readonly>
                 </p>
             </section>
 
         </main>
     </div>
-
-    <script src="../../../../../src/js/vlibras/vlibras.js"></script>
+<script src="/frontend/src/js/hub/perfil.js"></script>
 </body>
 
 </html>

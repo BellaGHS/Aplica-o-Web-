@@ -32,7 +32,7 @@
 
             <div class="rodape-menu">
                 <a href="../configuracoes/"><i class="bi bi-gear-fill"></i> Configurações</a>
-                <a href="../../../site/"><i class="bi bi-box-arrow-left"></i> Sair</a>
+                <a href="../../../site/index.html"><i class="bi bi-box-arrow-left"></i> Sair</a>
             </div>
         </aside>
 
@@ -82,7 +82,7 @@
 
                     <div class="acoes-maquina">
                         <button type="button" disabled title="Página ainda não disponível">Editar</button>
-                        <button type="button" id="abrir-modal">Desativar</button>
+                        <button type="button" class="abrir-modal">Desativar</button>
                     </div>
                 </article>
 
@@ -102,7 +102,7 @@
 
                     <div class="acoes-maquina">
                         <button type="button" disabled title="Página ainda não disponível">Editar</button>
-                        <button type="button" id="abrir-modal">Desativar</button>
+                        <button type="button" class="abrir-modal">Desativar</button>
                     </div>
                 </article>
 
@@ -126,23 +126,34 @@
     </div>
 
     <!-- Aqui é o javascript do pop-up, pra linkar tudo e fazer ele abrir qnd clicar -->
-    <script>
-        const fundo = document.getElementById("fundo-modal");
+<script>
+    const fundo = document.getElementById("fundo-modal");
 
-        document.getElementById("abrir-modal").addEventListener("click", () => {
+    // Abre o pop-up
+    document.querySelectorAll(".abrir-modal").forEach(botao => {
+        botao.addEventListener("click", () => {
             fundo.classList.add("aberto");
         });
+    });
 
-        document.getElementById("cancelar").addEventListener("click", () => {
-            fundo.classList.remove("aberto");
-        });
+    // Fecha ao clicar em cancelar
+    document.getElementById("cancelar").addEventListener("click", () => {
+        fundo.classList.remove("aberto");
+    });
 
-        document.getElementById("confirmar").addEventListener("click", () => {
-            // aqui é pra ligar pro botao realmente desativar, no beck-end
+    // Fecha ao clicar em desativar
+    document.getElementById("confirmar").addEventListener("click", () => {
+        // Futuramente, aqui será feita a requisição ao back-end.
+        fundo.classList.remove("aberto");
+    });
+
+    // Fecha ao clicar fora da caixa
+    fundo.addEventListener("click", (e) => {
+        if (e.target === fundo) {
             fundo.classList.remove("aberto");
-        });
-    </script>
-    <script src="../../../../../src/js/vlibras/vlibras.js"></script>
+        }
+    });
+</script>
 </body>
 
 </html>

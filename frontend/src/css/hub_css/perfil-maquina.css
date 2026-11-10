@@ -87,6 +87,16 @@
 }
 .btn-editar:hover { color: var(--azul-escuro); }
  
+.texto-sobre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 60px;
+    padding: 0 12px;
+    min-height: 150px;
+    border: 1px solid #c9ced4;
+    border-radius: 8px;
+}
+
 .grade-campos {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -98,7 +108,7 @@
 .grade-campos label {
     display: block;
     margin-bottom: 4px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--azul-escuro);
 }
  

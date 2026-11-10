@@ -27,7 +27,7 @@
  
             <div class="rodape-menu">
                 <a href="../configuracoes/"><i class="bi bi-gear-fill"></i> Configurações</a>
-                <a href="index.html"><i class="bi bi-box-arrow-left"></i> Sair</a>
+                <a href="../../../site/index.html"><i class="bi bi-box-arrow-left"></i> Sair</a>
             </div>
         </aside>
 
@@ -41,14 +41,17 @@
             </div>
  
             <!-- salvar só volta pro perfil -->
-            <form action="../perfil-maquina/" method="get" enctype="multipart/form-data">
+            <form id="form-editar-perfil">
  
                 <section class="banner-perfil">
                     <div class="avatar-editavel">
-                        <div class="avatar-grande"><i class="bi bi-person-fill"></i></div>
+                        <div class="avatar-grande">
+                            <img id="preview-foto" src="" alt="Foto de perfil" hidden>
+                            <i class="bi bi-person-fill" id="icone-foto"></i>
+                        </div>
                         <label class="btn-camera" title="Alterar foto">
                             <i class="bi bi-camera-fill"></i>
-                            <input type="file" name="foto" accept="image/*">
+                            <input type="file" id="fotoPerfil" name="foto" accept="image/*">
                         </label>
                     </div>
                     <div>
@@ -65,6 +68,10 @@
                     </div>
  
                     <div class="grade-campos">
+                        <div>
+                            <label for="nomeExibicao">Nome de Exibição</label>
+                            <input type="text" id="nomeExibicao" name="nomeExibicao">
+                        </div>
                         <div>
                             <label for="nome">Nome completo</label>
                             <input type="text" id="nome" name="nome">
@@ -97,11 +104,25 @@
                 </section>
  
             </form>
+
+            <div class="modal fade" id="modalMensagem" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitulo">
+                                Perfil atualizado!
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                        </div>
+                        <div class="modal-body" id="modalTexto">Suas informações doram salvas com sucesso.</div>
+                        <div class="modal-footer"><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendi</button></div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
- 
-    <script src="../../../../../src/js/vlibras/vlibras.js"></script>
-    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/frontend/src/js/hub/editar-perfil.js"></script>
 </body>
  
 </html>

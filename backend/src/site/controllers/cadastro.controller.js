@@ -21,7 +21,7 @@ async function cadastrar(req, res) {
     }
 }
 
-module.exports = {cadastrar};
+module.exports = { cadastrar };
 
 // (201) criado, 
 // (400) dado inválido, 
