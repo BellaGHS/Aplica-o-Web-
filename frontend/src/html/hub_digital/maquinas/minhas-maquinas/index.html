@@ -47,7 +47,10 @@
 
             <div class="topo-maquinas">
                 <h1>Minhas máquinas</h1>
-                <button type="button" class="btn-adicionar" disabled title="Página ainda não disponível">Adicionar +</button>
+                <a href="../cadastrar-maquina/">
+
+                    <button type="button" class="btn-adicionar">Adicionar +</button>
+                </a>
             </div>
 
             <!-- abas de disponibilidade -->
@@ -99,7 +102,7 @@
 
                     <div class="acoes-maquina">
                         <button type="button" disabled title="Página ainda não disponível">Editar</button>
-                        <button type="button">Desativar</button>
+                        <button type="button" id="abrir-modal">Desativar</button>
                     </div>
                 </article>
 
@@ -139,6 +142,7 @@
             fundo.classList.remove("aberto");
         });
     </script>
+    <script src="../../../../../src/js/vlibras/vlibras.js"></script>
 </body>
 
 </html>
