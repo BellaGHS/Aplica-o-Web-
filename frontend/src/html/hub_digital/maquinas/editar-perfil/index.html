@@ -45,10 +45,13 @@
  
                 <section class="banner-perfil">
                     <div class="avatar-editavel">
-                        <div class="avatar-grande"><i class="bi bi-person-fill"></i></div>
+                        <div class="avatar-grande">
+                            <img id="preview-foto" src="" alt="Foto de perfil" hidden>
+                            <i class="bi bi-person-fill" id="icone-foto"></i>
+                        </div>
                         <label class="btn-camera" title="Alterar foto">
                             <i class="bi bi-camera-fill"></i>
-                            <input type="file" name="foto" accept="image/*">
+                            <input type="file" id="fotoPerfil" name="foto" accept="image/*">
                         </label>
                     </div>
                     <div>

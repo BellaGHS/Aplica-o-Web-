@@ -4,6 +4,51 @@ document.addEventListener('DOMContentLoaded', async () => {
     const modal = new bootstrap.Modal(
         document.getElementById('modalMensagem')
     );
+    const campoFoto = form.querySelector('input[name="foto"]');
+    const avatar = document.querySelector('.avatar-editavel .avatar-grande');
+    const iconeFoto = avatar.querySelector('i');
+
+    const imagem = document.createElement('img');
+    imagem.alt = 'Foto de perfil';
+    imagem.style.width = '100%';
+    imagem.style.height = '100%';
+    imagem.style.objectFit = 'cover';
+    imagem.hidden = true;
+
+    avatar.appendChild(imagem);
+
+    function exibirFoto(caminho) {
+        if (caminho) {
+            imagem.src = caminho;
+            imagem.hidden = false;
+            iconeFoto.hidden = true;
+        } else {
+            imagem.hidden = true;
+            iconeFoto.hidden = false;
+        }
+    }
+
+    // Pré-visualização da foto escolhida
+    campoFoto.addEventListener('change', () => {
+        const arquivo = campoFoto.files[0];
+
+        if (!arquivo) return;
+
+        if (!arquivo.type.startsWith('image/')) {
+            mostrarMensagem('Arquivo inválido', 'Selecione uma imagem.');
+            campoFoto.value = '';
+            return;
+        }
+
+        if (arquivo.size > 5 * 1024 * 1024) {
+            mostrarMensagem('Imagem muito grande', 'Escolha uma imagem de até 5 MB.');
+            campoFoto.value = '';
+            return;
+        }
+
+        const url = URL.createObjectURL(arquivo);
+        exibirFoto(url);
+    });
 
     function mostrarMensagem(titulo, mensagem) {
         document.getElementById('modalTitulo').textContent = titulo;
@@ -30,6 +75,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         const perfil = resposta.perfil;
+        exibirFoto(perfil.fotoPerfil);
 
         document.getElementById('nome').value = perfil.nome;
         document.getElementById('email').value = perfil.email;
@@ -67,13 +113,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         };
 
         try {
+            const dados = new FormData(form);
             const res = await fetch('/api/perfil', {
                 method: 'PUT',
                 headers: {
-                    'Content-Type': 'application/json',
                     Authorization: `Bearer ${token}`
                 },
-                body: JSON.stringify(dados)
+                body: dados
             });
 
             const resposta = await res.json();

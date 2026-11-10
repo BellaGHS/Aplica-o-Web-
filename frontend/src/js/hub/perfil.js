@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     }
 
+
     try {
         const res = await fetch('/api/perfil', {
             headers: {
@@ -20,6 +21,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         const perfil = resposta.perfil;
+        const foto = document.getElementById('foto-perfil');
+        const icone = document.getElementById('icone-foto');
+
+        if (perfil.fotoPerfil && foto && icone) {
+            foto.src = perfil.fotoPerfil;
+            foto.hidden = false;
+            icone.hidden = true;
+        }
 
         document.getElementById('nome').value = perfil.nome;
         document.getElementById('email').value = perfil.email;

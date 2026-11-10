@@ -22,6 +22,7 @@ function montarPerfil(usuario) {
         sobre: usuario.sobre || '',
         razaoSocial: usuario.razaoSocial || '',
         nomeExibicao: usuario.nomeExibicao || '',
+        fotoPerfil: usuario.fotoPerfil || '',
         fornece: tipo.fornece,
 
         banner: {
@@ -48,7 +49,7 @@ function obter(usuarioId) {
     return montarPerfil(usuario);
 }
 
-function atualizar(usuarioId, dados) {
+function atualizar(usuarioId, dados, arquivo) {
     const usuario = usuarios.buscarPorId(usuarioId);
     if (!usuario) throw erro(404, 'Usuário não encontrado');
 
@@ -93,6 +94,10 @@ function atualizar(usuarioId, dados) {
     if (dados.nomeExibicao !== undefined) {
         if (!textoPreenchido(dados.nomeExibicao, 2)) throw erro(400, 'Nome de exibição inválido');
         campos.nomeExibicao = dados.nomeExibicao.trim();
+    }
+
+    if (arquivo) {
+        campos.fotoPerfil = `/uploads/perfis/${arquivo.filename}`;
     }
 
     if (Object.keys(campos).length === 0) throw erro(400, 'Nenhum campo para atualizar');
