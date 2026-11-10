@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    // Pré-visualização da foto escolhida
     campoFoto.addEventListener('change', () => {
         const arquivo = campoFoto.files[0];
 
@@ -60,7 +59,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     }
 
-    // para carregar os dados
+    //carregar os dados
     try {
         const res = await fetch('/api/perfil', {
             headers: {
@@ -99,7 +98,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     }
 
-    // para salvar as alterções
+    //salvar as alterções
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
