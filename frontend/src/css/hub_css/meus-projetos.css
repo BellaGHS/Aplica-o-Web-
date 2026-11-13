@@ -43,29 +43,64 @@ button {
 }
 
 .sidebar {
-    width: 260px;
-    min-width: 260px;
-    background: linear-gradient(180deg, #14a3b8 0%, #0f6d8b 32%, #0d4d7f 100%);
-    display: flex;
-    flex-direction: column;
-    padding: 20px 0 16px;
-    color: #fff;
-}
-
-.logo {
-    display: block;
     width: 220px;
-    max-width: calc(100% - 28px);
-    margin: 6px auto 24px;
-    object-fit: contain;
-}
-
-.main-menu {
+    flex-shrink: 0;
+    background: linear-gradient(180deg, var(--turquesa) 0%, var(--azul-escuro) 100%);
+    color: #fff;
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    flex: 1;
+    padding: 24px 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
 }
+ 
+.sidebar .logo { width: 230px; max-width: 100%; margin: 0 auto 20px; }
+ 
+.sidebar nav { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+ 
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 24px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+.sidebar a i { font-size: 1.6rem; }
+.sidebar a:hover,
+.sidebar a.ativo { background: rgba(255, 255, 255, 0.15); }
+ 
+.sidebar .rodape-menu {
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    margin: 0 20px;
+    padding-top: 12px;
+}
+.sidebar .rodape-menu a { padding: 6px 4px; font-size: 0.75rem; font-weight: 400; }
+.sidebar .rodape-menu a i { font-size: 1rem; }
+ 
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    height: 60px;
+    width: calc(100% + 56px);
+
+    margin: -16px -28px 8px;
+    padding: 0 28px;
+
+    background-color: #fff;
+    position: relative;
+    z-index: 10;
+}
+.topbar-acoes { display: flex; align-items: center; gap: 18px; margin-left: auto; }
+.topbar-acoes .bi-bell-fill { font-size: 1.1rem; }
+.topbar-acoes .bi-person-circle { font-size: 2.2rem; }
 
 .nav-item {
     display: flex;
@@ -112,33 +147,6 @@ button {
     flex: 1;
     padding: 18px 30px 40px;
     background: var(--fundo);
-}
-
-.topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-
-    height: 60px;
-    width: calc(100% + 56px);
-
-    margin: -16px -28px 8px;
-    padding: 0 28px;
-
-    background-color: #fff;
-    position: relative;
-    z-index: 10;
-}
-
-.topbar-spacer {
-    flex: 1;
-}
-
-.topbar-acoes {
-    display: flex;
-    align-items: center;
-    gap: 16px;
 }
 
 .icon-button {

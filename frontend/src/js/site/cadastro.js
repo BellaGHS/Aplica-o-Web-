@@ -42,6 +42,7 @@ if (form) {
         fornece: $('fornecer').value,
         termos: $('termos').checked,
     };
+    console.log('Opção selecionada:', $('fornecer').value);
 
     try {
         const res = await fetch('/api/cadastro', {

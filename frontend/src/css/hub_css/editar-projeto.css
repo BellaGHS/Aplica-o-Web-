@@ -1,4 +1,3 @@
-<<<<<<< HEAD:frontend/src/css/hub_css/editar-projeto.css
 .pagina-editar-projeto {
     --ep-azul: #14487a;
     --ep-titulo: #1b4f8a;
@@ -18,31 +17,30 @@
 .pagina-editar-projeto .layout { display: flex; min-height: 100vh; }
  
 .pagina-editar-projeto .sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, var(--turquesa) 0%, var(--azul-escuro) 100%);
+    color: #fff;
     display: flex;
     flex-direction: column;
-    width: clamp(220px, 14vw, 340px);   
-    flex-shrink: 0;
-    height: 100vh;
+    padding: 24px 0;
     position: sticky;
     top: 0;
-    padding: 1.6em 0;
-    color: #fff;
-    font-size: 1em;
-    background: linear-gradient(180deg, #1ab5c0 0%, #14487a 100%);
+    height: 100vh;
 }
-.pagina-editar-projeto .sidebar .logo { display: block; width: 82%; margin: 0 auto 2.6em; }
-.pagina-editar-projeto .sidebar nav { display: flex; flex-direction: column; gap: 0.5em; flex: 1; }
+.pagina-editar-projeto .sidebar .logo { width: 230px; max-width: 100%; margin: 0 auto 20px; }
+.pagina-editar-projeto .sidebar nav { display: flex; flex-direction: column; gap: 6px; flex: 1; }
 .pagina-editar-projeto .sidebar a {
     display: flex;
     align-items: center;
-    gap: 0.8em;
-    padding: 0.8em 1.6em;
+    gap: 12px;
+    padding: 10px 24px;
     color: #fff;
     text-decoration: none;
-    font-size: 0.95em;
+    font-size: 0.85rem;
     font-weight: 600;
 }
-.pagina-editar-projeto .sidebar a i { font-size: 1.9em; line-height: 1; }
+.pagina-editar-projeto .sidebar a i { font-size: 1.6rem; }
 .pagina-editar-projeto .sidebar a:hover,
 .pagina-editar-projeto .sidebar a.ativo { background: rgba(255, 255, 255, 0.15); }
 .pagina-editar-projeto .rodape-menu { border-top: 1px solid rgba(255, 255, 255, 0.45); margin: 0 1.4em; padding-top: 0.8em; }
@@ -594,5 +592,3 @@
     .pagina-editar-projeto .colunas-maquina { grid-template-columns: 1fr; gap: 1.35em; width: 100%; margin-left: 0; }
     .pagina-editar-projeto .btn-enviar-maquina { width: 100%; }
 }
->>>>>>> main:src/css/hub_css/editar-projeto.css
- 
