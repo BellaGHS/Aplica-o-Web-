@@ -1,22 +1,34 @@
+
 document.addEventListener('DOMContentLoaded', async () => {
     const token = sessionStorage.getItem('token');
     const form = document.getElementById('form-editar-perfil');
-    const modal = new bootstrap.Modal(
-        document.getElementById('modalMensagem')
-    );
+
+    const modalElemento = document.getElementById('modalMensagem');
+    const modal = new bootstrap.Modal(modalElemento);
+
+    if (!token) {
+        alert('Faça login para acessar seu perfil.');
+        return;
+    }
+
     const campoFoto = form.querySelector('input[name="foto"]');
     const avatar = document.querySelector('.avatar-editavel .avatar-grande');
     const iconeFoto = avatar.querySelector('i');
+    const imagem = document.getElementById('preview-foto');
 
-    const imagem = document.createElement('img');
-    imagem.alt = 'Foto de perfil';
-    imagem.style.width = '100%';
-    imagem.style.height = '100%';
-    imagem.style.objectFit = 'cover';
-    imagem.hidden = true;
+    // Exibir mensagens no pop-up
+    function mostrarMensagem(titulo, mensagem) {
+        document.getElementById('modalTitulo').textContent = titulo;
+        document.getElementById('modalTexto').textContent = mensagem;
 
-    avatar.appendChild(imagem);
+        modal.show();
 
+        setTimeout(() => {
+            modal.hide();
+        }, 2000);
+    }
+
+    // Exibir foto
     function exibirFoto(caminho) {
         if (caminho) {
             imagem.src = caminho;
@@ -28,6 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
+    // Pré-visualização da foto
     campoFoto.addEventListener('change', () => {
         const arquivo = campoFoto.files[0];
 
@@ -49,17 +62,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         exibirFoto(url);
     });
 
-    function mostrarMensagem(titulo, mensagem) {
-        document.getElementById('modalTitulo').textContent = titulo;
-        document.getElementById('modalTexto').textContent = mensagem;
-        modal.show();
-    }
-    if (!token) {
-        alert('Faça login para acessar seu perfil.');
-        return;
-    }
-
-    //carregar os dados
+    // Carregar os dados do perfil
     try {
         const res = await fetch('/api/perfil', {
             headers: {
@@ -74,13 +77,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         const perfil = resposta.perfil;
+
         exibirFoto(perfil.fotoPerfil);
 
-        document.getElementById('nome').value = perfil.nome;
-        document.getElementById('email').value = perfil.email;
-        document.getElementById('telefone').value = perfil.telefone;
-        document.getElementById('localizacao').value = perfil.localizacao;
-        document.getElementById('sobre').value = perfil.sobre;
+        document.getElementById('nome').value = perfil.nome || '';
+        document.getElementById('email').value = perfil.email || '';
+        document.getElementById('telefone').value = perfil.telefone || '';
+        document.getElementById('localizacao').value = perfil.localizacao || '';
+        document.getElementById('sobre').value = perfil.sobre || '';
         document.getElementById('nomeExibicao').value = perfil.nomeExibicao || '';
 
         document.querySelector('.banner-perfil h1').textContent =
@@ -98,21 +102,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     }
 
-    //salvar as alterções
+    // Salvar alterações
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        const dados = {
-            nomeExibicao: document.getElementById('nomeExibicao').value,
-            nome: document.getElementById('nome').value,
-            email: document.getElementById('email').value,
-            telefone: document.getElementById('telefone').value,
-            localizacao: document.getElementById('localizacao').value,
-            sobre: document.getElementById('sobre').value,
-        };
+        const dados = new FormData(form);
 
         try {
-            const dados = new FormData(form);
             const res = await fetch('/api/perfil', {
                 method: 'PUT',
                 headers: {
@@ -132,11 +128,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                 'Suas informações foram salvas com sucesso.'
             );
 
-            document.getElementById('modalMensagem').addEventListener('hidden.bs.modal', () => {
+            // Redirecionar após o fechamento automático
+            setTimeout(() => {
                 window.location.href = '../perfil-maquina/';
-            }, { once: true });
+            }, 2000);
 
         } catch (erro) {
+            console.error('Erro ao atualizar perfil:', erro);
             mostrarMensagem('Erro ao atualizar perfil', erro.message);
         }
     });
