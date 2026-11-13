@@ -1,147 +1,236 @@
+
 :root {
     --azul-banner: #14487a;
 }
 
-.pagina-perfil .conteudo { background: var(--fundo); }
-
-.banner-perfil {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-    background: var(--azul-banner);
-    color: #fff;
-    border-radius: 12px;
-    padding: 20px 22px;
-    margin-bottom: 14px;
+/* Fundo da página */
+.pagina-perfil .conteudo {
+    background: var(--fundo, #f4f5f7);
 }
 
-.banner-perfil .avatar-grande {
+/* Banner do projeto */
+.banner-projeto {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 68px;
+    padding: 7px 12px;
+    margin-bottom: 10px;
+    background: var(--azul-banner);
+    color: #fff;
+    border-radius: 8px;
+}
+
+.imagem-projeto {
+    width: 58px;
+    height: 58px;
     flex-shrink: 0;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background: #fff;
-    color: var(--azul-banner);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 4.2rem;
     overflow: hidden;
-}
-.banner-perfil .avatar-grande img { width: 100%; height: 100%; object-fit: cover; }
-
-.banner-perfil h1 {
-    margin: 0;
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
-    font-weight: 600;
-}
-
-.banner-perfil .tipo {
-    display: inline-block;
-    background: #fff;
+    background: #e9ecef;
     color: var(--azul-banner);
-    font-size: 0.7rem;
-    font-weight: 600;
-    padding: 2px 12px;
-    border-radius: 12px;
-    margin: 2px 0 6px;
+    border-radius: 3px;
+    font-size: 2rem;
 }
 
-.banner-perfil p { margin: 0; font-size: 0.85rem; }
-.banner-perfil .tipo:empty { display: none; }  /* esconde a etiqueta enquanto estiver vazia */
-.banner-perfil h1:empty { min-height: 2.2rem; } /* segura a altura do banner sem o nome */
+.imagem-projeto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
+.banner-projeto h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
 
+/* Cards */
 .card-perfil {
+    width: 100%;
+    padding: 12px 16px 16px;
+    margin-bottom: 10px;
     background: #fff;
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
-    padding: 16px 22px 28px;
-    margin-bottom: 14px;
 }
 
 .card-perfil .cabecalho-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
 }
 
 .card-perfil h2 {
     margin: 0;
+    color: var(--azul-escuro, #14487a);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* Informações do projeto */
+.informacoes-projeto {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+        "quantidade localizacao prazo"
+        "tipo dimensoes arquivo"
+        "materiais . .";
+    column-gap: 28px;
+    row-gap: 10px;
+    padding: 0 18px;
+    align-items: start;
+}
+
+.campo-projeto {
+    min-width: 0;
+}
+
+.campo-projeto label {
+    display: block;
+    margin-bottom: 2px;
+    color: var(--azul-escuro, #14487a);
+    font-size: 0.82rem;
+}
+
+.campo-projeto p {
+    margin: 0;
+    padding-left: 12px;
+    color: #777;
+    font-size: 0.78rem;
+    line-height: 1.4;
+}
+
+/* Posição de cada informação */
+.quantidade {
+    grid-area: quantidade;
+}
+
+.localizacao {
+    grid-area: localizacao;
+}
+
+.prazo {
+    grid-area: prazo;
+}
+
+.tipo-peca {
+    grid-area: tipo;
+}
+
+.dimensoes {
+    grid-area: dimensoes;
+}
+
+.materiais {
+    grid-area: materiais;
+}
+
+.arquivo-projeto {
+    grid-area: arquivo;
+}
+
+/* Dimensões */
+.visual-dimensoes {
+    display: flex;
+    align-items: flex-start;
+    min-height: 45px;
+    padding-left: 8px;
+}
+
+.visual-dimensoes img {
+    width: 85px;
+    height: 65px;
+    object-fit: contain;
+}
+
+.visual-dimensoes span {
+    color: #777;
+    font-size: 0.78rem;
+}
+
+/* Arquivo */
+.arquivo-conteudo {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--azul-escuro);
-}
-.card-perfil h2 i { font-size: 1.3rem; }
-
-.btn-editar {
-    border: 0;
-    background: none;
-    color: #777;
-    font-size: 0.8rem;
-    text-decoration: none;
-    cursor: pointer;
-}
-.btn-editar:hover { color: var(--azul-escuro); }
-
-.grade-campos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px 60px;
-    padding: 0 12px;
+    padding: 2px 8px;
 }
 
-.grade-campos label {
-    display: block;
-    margin-bottom: 4px;
-    font-size: 0.85rem;
-    color: var(--azul-escuro);
+.arquivo-conteudo > i {
+    color: #222;
+    font-size: 2.8rem;
 }
 
-.grade-campos input {
-    width: 100%;
-    padding: 8px 12px;
-    font-size: 0.85rem;
+.arquivo-conteudo a {
     color: #555;
-    background: #fff;
-    border: 1px solid #c9ced4;
-    border-radius: 8px;
-    outline: 0;
-}
-.grade-campos input:focus {
-    border-color: var(--azul-escuro);
-    box-shadow: 0 0 0 2px rgba(20, 72, 122, 0.15);
+    font-size: 0.72rem;
+    text-decoration: underline;
+    white-space: nowrap;
 }
 
-.grade-campos input[readonly] {
-    cursor: default;
-    background: #fff;
+.arquivo-conteudo a:hover {
+    color: var(--azul-escuro, #14487a);
 }
-.grade-campos input[readonly]:focus {
-    border-color: #c9ced4;
-    box-shadow: none;
+
+/* Descrição */
+.card-descricao {
+    min-height: 100px;
 }
 
 .texto-sobre {
     margin: 0;
     padding: 0 12px;
-    font-size: 0.85rem;
-    line-height: 1.7;
-    color: var(--azul-escuro);
+    color: #555;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    white-space: pre-line;
 }
-.texto-sobre:empty { min-height: 70px; } /* segura a altura do card sem a descriçao */
 
-/* etiqueta de status colorida (opcional) */
-.banner-perfil .tipo.status-aberto      { background: #e3f6e6; color: #167a22; }
-.banner-perfil .tipo.status-andamento   { background: #fff3d6; color: #8a6100; }
-.banner-perfil .tipo.status-concluido   { background: #e4edf7; color: var(--azul-banner); }
-
-/* responsividade */
+/* Responsividade */
 @media (max-width: 768px) {
-    .grade-campos { grid-template-columns: 1fr; gap: 16px; }
-    .banner-perfil { flex-direction: column; text-align: center; }
+    .informacoes-projeto {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "quantidade localizacao"
+            "prazo tipo"
+            "dimensoes materiais"
+            "arquivo arquivo";
+        column-gap: 20px;
+        row-gap: 14px;
+        padding: 0 8px;
+    }
+
+    .banner-projeto h1 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .informacoes-projeto {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "quantidade"
+            "localizacao"
+            "prazo"
+            "tipo"
+            "materiais"
+            "dimensoes"
+            "arquivo";
+        row-gap: 12px;
+    }
+
+    .banner-projeto {
+        gap: 10px;
+    }
+
+    .imagem-projeto {
+        width: 52px;
+        height: 52px;
+    }
 }
