@@ -18,10 +18,6 @@ function buscarPorCnpj(cnpj) {
     return usuarios.find((u) => u.cnpj === cnpj);
 }
 
-function buscarPorSenha(senha) {
-    return usuarios.find((u) => u.senha === senha);
-}
-
 function buscarPorId(id) {
     return usuarios.find((u) => u.id === id);
 }

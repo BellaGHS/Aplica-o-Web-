@@ -11,9 +11,9 @@ const textoPreenchido = (v, min = 1) => typeof v === 'string' && v.trim().length
 
 function montarProjeto(projeto) {
     const tipo = obterTipo(projeto.fornece);
-    if (!tipo) throw erro(400, 'Tipo de projeto inválido');
     return {
         id: projeto.id,
+        donoId: projeto.donoId,
         tituloProjeto: projeto.tituloProjeto || '',
         imagemProjeto: projeto.imagemProjeto || '',
         quantidadePecas: projeto.quantidadePecas || '',
@@ -39,9 +39,16 @@ function obter(projetoId) {
     return montarProjeto(projeto);
 }
 
-function atualizar(projetoId, dados, imagem, arquivo) {
+function atualizar(usuarioId, projetoId, dados, imagem, arquivo) {
     const projeto = projetosRepository.buscarPorId(projetoId);
     if (!projeto) throw erro(404, 'Projeto não encontrado');
+
+    // Só o dono altera o próprio projeto. Sem esta verificação, qualquer usuário
+    // autenticado conseguiria sobrescrever o projeto de outro pelo id da URL.
+    if (projeto.donoId !== usuarioId) {
+        throw erro(403, 'Este projeto não pertence a você');
+    }
+
     if (dados === null || typeof dados !== 'object' || Array.isArray(dados)) {
         throw erro(400, 'Dados inválidos');
     }

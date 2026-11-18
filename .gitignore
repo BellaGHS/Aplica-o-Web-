@@ -1,3 +1,10 @@
-*.env
-*.DS_Store
-*node_modules
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# Arquivos enviados por usuarios nao entram no repositorio.
+# Sao dados pessoais (LGPD) e fazem o repositorio crescer sem controle.
+uploads/
+coverage/

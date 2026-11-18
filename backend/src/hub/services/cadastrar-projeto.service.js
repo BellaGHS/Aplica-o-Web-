@@ -46,6 +46,7 @@ function cadastrar(usuarioId, dados, imagem, arquivo) {
     }
 
     const campos = {
+        donoId: usuarioId,
         tituloProjeto: dados.tituloProjeto.trim(),
         quantidadePecas: quantidade,
         tipoPeca: dados.tipoPeca.trim(),

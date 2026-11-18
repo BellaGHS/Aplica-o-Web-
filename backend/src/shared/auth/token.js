@@ -1,5 +1,12 @@
 const crypto = require('crypto');
 
+// Sem AUTH_SECRET definido, cada processo sorteia o proprio segredo: todos os
+// usuarios caem a cada reinicio e, com mais de uma instancia, o token emitido
+// por uma e recusado pela outra. Em producao isso tem que ser erro, nao jeitinho.
+if (!process.env.AUTH_SECRET && process.env.NODE_ENV === 'production') {
+    throw new Error('AUTH_SECRET e obrigatorio em producao');
+}
+
 const SEGREDO = process.env.AUTH_SECRET || crypto.randomBytes(32).toString('hex');
 const VALIDADE_MS = 8 * 60 * 60 * 1000;
 

@@ -22,10 +22,6 @@ beforeEach(() => {
     usuarios.limpar();
     const usuario = usuarios.salvar(dadosValidos());
     token = gerarToken(usuario.id);
-    const { verificarToken } = require('../../src/shared/auth/token');
-    console.log('ID:', usuario.id);
-    console.log('TOKEN:', token);
-    console.log('TOKEN VALIDADO:', verificarToken(token));
 });
 
 
@@ -110,5 +106,54 @@ describe('PUT /api/perfil', () => {
             .send({});
 
         expect(res.status).toBe(400);
+    });
+});
+// ---------------------------------------------------------------------------
+// Regressao de seguranca: upload de foto de perfil.
+//
+// O filtro antigo aceitava qualquer arquivo cujo cabecalho Content-Type
+// comecasse com "image/" e montava o nome final com a extensao do arquivo
+// original. Como os dois campos vem do cliente, era possivel salvar um .html
+// na pasta /uploads -- que e servida estaticamente -- e executar script no
+// dominio da aplicacao, com acesso ao token guardado no navegador.
+// ---------------------------------------------------------------------------
+describe('PUT /api/perfil - seguranca do upload de foto', () => {
+
+    test('recusa arquivo .html disfarcado de imagem', async () => {
+        const res = await request(app)
+            .put('/api/perfil')
+            .set('Authorization', `Bearer ${token}`)
+            .attach('foto', Buffer.from('<script>roubaToken()</script>'), {
+                filename: 'foto.html',
+                contentType: 'image/png'
+            });
+
+        expect(res.status).toBe(400);
+        expect(res.body.mensagem).toMatch(/imagem/i);
+    });
+
+    test('recusa arquivo .svg, que tambem executa script', async () => {
+        const res = await request(app)
+            .put('/api/perfil')
+            .set('Authorization', `Bearer ${token}`)
+            .attach('foto', Buffer.from('<svg xmlns="http://www.w3.org/2000/svg"><script>1</script></svg>'), {
+                filename: 'foto.svg',
+                contentType: 'image/svg+xml'
+            });
+
+        expect(res.status).toBe(400);
+    });
+
+    test('recusa arquivo acima do limite de 5 MB', async () => {
+        const res = await request(app)
+            .put('/api/perfil')
+            .set('Authorization', `Bearer ${token}`)
+            .attach('foto', Buffer.alloc(6 * 1024 * 1024, 0), {
+                filename: 'grande.png',
+                contentType: 'image/png'
+            });
+
+        expect(res.status).toBe(400);
+        expect(res.body.mensagem).toMatch(/tamanho/i);
     });
 });

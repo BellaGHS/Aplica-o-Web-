@@ -1,6 +1,12 @@
 const bcrypt = require('bcryptjs');
+const crypto = require('crypto');
 const { emailValido } = require('../../../../frontend/src/js/site/validacoes');
 const usuarios = require('../../shared/repositories/usuarios.repository');
+
+// Hash descartavel, usado quando o e-mail nao existe. Sem ele, a resposta para
+// e-mail inexistente volta na hora e a de e-mail existente leva o tempo do
+// bcrypt -- diferenca suficiente para descobrir quem tem conta no sistema.
+const HASH_INEXISTENTE = bcrypt.hashSync(crypto.randomBytes(32).toString('hex'), 10);
 
 function erro(status, mensagem) {
     const e = new Error(mensagem);
@@ -18,15 +24,14 @@ async function login(dados = {}) {
     const email = dados.email.trim().toLowerCase();
     const usuario = usuarios.buscarPorEmail(email);
 
-    if (!usuario) {
-        throw erro(401, 'E-mail ou senha incorretos');
-    }
+    // A comparacao roda sempre, exista o usuario ou nao, para que as duas
+    // respostas levem o mesmo tempo.
     const senhaCorreta = await bcrypt.compare(
         dados.senha,
-        usuario.senhaHash
+        usuario?.senhaHash ?? HASH_INEXISTENTE
     );
 
-    if (!senhaCorreta) {
+    if (!usuario || !senhaCorreta) {
         throw erro(401, 'E-mail ou senha incorretos');
     }
     return {

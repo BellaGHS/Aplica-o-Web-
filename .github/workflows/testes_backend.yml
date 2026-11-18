@@ -13,7 +13,9 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - name: Instalar dependências (build)
+      - name: Instalar dependências
         run: npm ci
       - name: Rodar testes com cobertura
-        run: npx jest --coverage
+        run: npm run test:cobertura -- --ci
+        env:
+          NODE_ENV: test

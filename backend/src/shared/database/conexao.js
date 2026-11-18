@@ -1,42 +1,41 @@
-const neo4j = require('neo4j-driver');
-const express = require('express');
+// Conexao com o Neo4j.
+//
+// Este modulo apenas EXPORTA funcoes: nada acontece ao importa-lo. A versao
+// anterior chamava app.listen(3000) no corpo do arquivo, entao o simples
+// require subia um segundo servidor e conflitava com o server.js.
+//
+// Antes de usar:  npm install neo4j-driver dotenv
+// E defina no .env da raiz:  DB_URI, DB_USER, DB_PASSWORD
+
 const path = require('path');
-require('dotenv').config({ path: path.join(__dirname, '.env') });
-const app = express();
 
-function ConnectToDB () {
-    (async () => {
-        // URI examples: 'neo4j://localhost', 'neo4j+s://xxx.databases.neo4j.io'
-        const URI = process.env.DB_URI;
-        const USER = process.env.DB_USER;
-        const PASSWORD = process.env.DB_PASSWORD;
-        let driver
+let driver = null;
 
-        try {
-            driver = neo4j.driver(URI, neo4j.auth.basic(USER, PASSWORD))
-            await driver.verifyConnectivity()
-            console.log('Connection established')
-        } catch(err) {
-            console.log(`Connection error\n${err}\nCause: ${err.cause}`)
-            await driver.close()
-            return
-        }
+function obterDriver() {
+    if (driver) return driver;
 
+    require('dotenv').config({ path: path.join(__dirname, '../../../../.env') });
+    const neo4j = require('neo4j-driver');
 
-        // Use the driver to run queries
+    const { DB_URI, DB_USER, DB_PASSWORD } = process.env;
+    if (!DB_URI || !DB_USER || !DB_PASSWORD) {
+        throw new Error('Defina DB_URI, DB_USER e DB_PASSWORD no .env');
+    }
 
-        await driver.close()
-
-    })();
-
+    driver = neo4j.driver(DB_URI, neo4j.auth.basic(DB_USER, DB_PASSWORD));
+    return driver;
 }
 
+async function conectar() {
+    const d = obterDriver();
+    await d.verifyConnectivity();
+    return d;
+}
 
-app.listen(3000, () => {
-    try {
-        ConnectToDB()
-    }
-    catch (e) {
-        console.log("Erro: ", e);
-    }
-})
+async function fechar() {
+    if (!driver) return;
+    await driver.close();
+    driver = null;
+}
+
+module.exports = { obterDriver, conectar, fechar };

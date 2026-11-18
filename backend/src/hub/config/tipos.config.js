@@ -2,12 +2,12 @@ const PASTA_HUB = '/frontend/src/html/hub_digital';
 const PASTA_IMG = '/frontend/src/img';
 
 const paginasComuns = {
-    inicio: `${PASTA_HUB}/maquinas/inicio-hub`,
-    conexoes: `${PASTA_HUB}/maquinas/concexoes-maquina`,
-    mensagens: `${PASTA_HUB}/maquinas/mensagens`,
-    configuracoes: `${PASTA_HUB}/maquinas/configuracoes`,
-    perfil: `${PASTA_HUB}/maquinas/perfil-maquina`,
-    editarPerfil: `${PASTA_HUB}/maquinas/editar-perfil`,
+    inicio: `${PASTA_HUB}/maquinas/inicio-hub/`,
+    conexoes: `${PASTA_HUB}/maquinas/conexoes-maquina/`,
+    mensagens: `${PASTA_HUB}/maquinas/mensagens/`,
+    configuracoes: `${PASTA_HUB}/maquinas/configuracoes/`,
+    perfil: `${PASTA_HUB}/maquinas/perfil-maquina/`,
+    editarPerfil: `${PASTA_HUB}/maquinas/editar-perfil/`,
 };
 
 
