@@ -330,3 +330,6 @@ grid-template-columns: 1fr;
 gap: 16px;
     }
 }
+.cores-invertidas {
+    filter: invert(1) hue-rotate(180deg);
+}
