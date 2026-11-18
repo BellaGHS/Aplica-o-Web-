@@ -1,18 +1,24 @@
-function inverterCores() {
-    document.documentElement.classList.toggle("cores-invertidas");
-}
-
 document.addEventListener("DOMContentLoaded", function () {
 
-    const inverterCores = document.getElementById("inverter-cores");
+    const coresInvertidas = localStorage.getItem("inverterCores") === "true";
 
-    inverterCores.addEventListener("change", function () {
+    document.documentElement.classList.toggle(
+        "cores-invertidas",
+        coresInvertidas
+    );
 
-        document.documentElement.classList.toggle(
-            "cores-invertidas",
-            inverterCores.checked
-        );
+    const inverterCheckbox = document.getElementById("inverter-cores");
 
-    });
+    if (inverterCheckbox) {
 
+        inverterCheckbox.checked = coresInvertidas;
+        inverterCheckbox.addEventListener("change", function () {
+            const ativado = this.checked;
+            document.documentElement.classList.toggle(
+                "cores-invertidas",
+                ativado
+            );
+            localStorage.setItem("inverterCores", ativado);
+        });
+    }
 });
