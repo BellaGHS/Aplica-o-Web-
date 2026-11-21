@@ -26,3 +26,14 @@ tem marca, material e etc
 
 O banco ja está com as constraints, ou seja, deixa os dados de cadastros com regras, entao o cpf é unico, email tambem, e etc. pra ver as constraints é so rodar essa query:
 SHOW CONSTRAINTS;
+
+ATUALIZACAO:    21/11/26
+
+Novos nós : Estado e Cidade 
+Importei a lista de municípios brasileiros (fonte: repositório kelvins/municipios-brasileiros). Cada Cidade tem nome, código do IBGE (codigoIbge) e localizacao, que guarda a latitude e a longitude num campo do tipo point. Cada cidade está ligada ao seu estado por (Cidade)-[:EM]->(Estado).
+
+O que isso faz
+
+Listar as máquinas disponíveis mais próximas de um usuário
+Filtrar por raio de distância (por exemplo, até 50 km)
+
